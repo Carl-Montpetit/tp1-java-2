@@ -3,8 +3,8 @@ import java.util.Scanner;
 /**
  * Écrivez vos nom ici :
  *
- * @nom
- * @code_permanent
+ * @nom Montpetit, Carl
+ * @code_permanent MONC08069000
  *
  * @nom
  * @code_permanent
