@@ -1,10 +1,9 @@
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
-
 /**
  * Décrit le son d'un groupe de consonne en français.
- *
+ * <p>
  * Cette description permet de contenir une ou deux consonnes afin de décrire le son des consonnes dans une syllabe.
  *
  * @see API_Consonne
@@ -24,7 +23,6 @@ public class ConsonneFrancais {
      */
     protected API_Consonne consonne2 = null;
 
-
     /**
      * Construit un groupe avec une seule consonne.
      *
@@ -33,7 +31,6 @@ public class ConsonneFrancais {
     public ConsonneFrancais( API_Consonne consonne1 ) {
         this.consonne1 = consonne1;
     }
-
 
     /**
      * Construit un groupe avec deux consonnes.
@@ -46,11 +43,9 @@ public class ConsonneFrancais {
         this.consonne2 = consonne2;
     }
 
-
-
     /**
      * Lit un groupe de consonnes dans le {@code Scanner}.
-     *
+     * <p>
      * Vérifie si le prochain caractère du {@code scanner} représente une consonne.  Si oui, alors cette consonne
      * deviendra la consonne de base du groupe retourné.
      * Ensuite, vérifie si le prochain caractère représente une consonne.  Si oui, alors cette consonne deviendra la
@@ -58,8 +53,8 @@ public class ConsonneFrancais {
      *
      * @param scanner le {@code Scanner} dans lequel la lecture est effectué.
      * @return le groupe de consonne lu.
-     * @exception NoSuchElementException s'il n'y a pas de {@code API_Consonne} valide.
-     * @exception IllegalStateException si le {@code Scanner} est fermé.
+     * @throws NoSuchElementException s'il n'y a pas de {@code API_Consonne} valide.
+     * @throws IllegalStateException  si le {@code Scanner} est fermé.
      */
     public static ConsonneFrancais lire( Scanner scanner ) {
         ConsonneFrancais resultat = null;
@@ -75,7 +70,6 @@ public class ConsonneFrancais {
 
         return resultat;
     }
-
 
     /**
      * retourne une chaîne de caractère composée des consonnes du groupe.

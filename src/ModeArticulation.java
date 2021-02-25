@@ -13,7 +13,6 @@ public enum ModeArticulation {
 
     ;
 
-
     /**
      * Caractéristique sonore défini dans l'article de Alain Ghio et al.
      *
@@ -26,7 +25,6 @@ public enum ModeArticulation {
         return FRICATIF == this
                 || OCCLUSIF == this;
     }
-
 
     /**
      * Caractéristique sonore défini dans l'article de Alain Ghio et al.

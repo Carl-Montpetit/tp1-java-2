@@ -171,10 +171,7 @@ public enum API_Consonne {
     // unicode a verifier :
     API_184( 0x2C71, ModeArticulation.BATTU, PointArticulationConsonne.LABIO_DENTAL, Phonation.VOISEE,
             Cavite.ORALE, Ecoulement.CENTRALE, Flux.PULMONAIRE ),
-
-
     ;
-
 
     /**
      * Contient toutes les constantes de la classe dans l'ordre des déclarations.
@@ -195,8 +192,6 @@ public enum API_Consonne {
      * Contient un {@code Pattern} de reconnaissance pour identifier si un caractère est un symbole valide de l'API.
      */
     private static final Pattern PATRON_CHOIX_TOUS = Pattern.compile( "[" + S_TOUS + "]" );
-
-
 
     /**
      * Constructeur pour les constantes.
@@ -226,7 +221,6 @@ public enum API_Consonne {
         this.flux = flux;
     }
 
-
     private int codePoint;
     private ModeArticulation modeArticulation;
     private PointArticulationConsonne pointArticulationConsonne;
@@ -235,7 +229,6 @@ public enum API_Consonne {
     private Ecoulement ecoulement;
     private Flux flux;
 
-
     /**
      * getter pour le codePoint.
      * @return le codePoint du phonème.
@@ -243,7 +236,6 @@ public enum API_Consonne {
     public int getCodePoint() {
         return codePoint;
     }
-
 
     /**
      * Indique si la consonne a la caractéristique sonore 'vocalique'.
@@ -255,7 +247,6 @@ public enum API_Consonne {
         return modeArticulation.estVocalique();
     }
 
-
     /**
      * Indique si la consonne a la caractéristique sonore 'nasal'.
      *
@@ -265,7 +256,6 @@ public enum API_Consonne {
     public boolean estNasal() {
         return cavite.estNasal();
     }
-
 
     /**
      * Indique si la consonne a la caractéristique sonore 'voisé'.
@@ -277,7 +267,6 @@ public enum API_Consonne {
         return phonation.estVoise();
     }
 
-
     /**
      * Indique si la consonne a la caractéristique sonore 'continu'.
      *
@@ -287,7 +276,6 @@ public enum API_Consonne {
     public boolean estContinu() {
         return modeArticulation.estContinu();
     }
-
 
     /**
      * Indique si la consonne a la caractéristique sonore 'compact'.
@@ -299,7 +287,6 @@ public enum API_Consonne {
         return pointArticulationConsonne.estCompact();
     }
 
-
     /**
      * Indique si la consonne a la caractéristique sonore 'aigu'.
      *
@@ -309,7 +296,6 @@ public enum API_Consonne {
     public boolean estAigu() {
         return pointArticulationConsonne.estAigu();
     }
-
 
     /**
      * Lit une consonne dans le {@code Scanner}.
@@ -327,7 +313,6 @@ public enum API_Consonne {
 
         return TOUS[ S_TOUS.indexOf( suivant ) ];
     }
-
 
     /**
      * Retourne une chaîne de caractère contenant le symbole de l'API représentant le phonème.

@@ -13,7 +13,6 @@ public enum PointArticulationVoyelle {
 
     ;
 
-
     /**
      * Caractéristique sonore des voyelles postérieures.
      *

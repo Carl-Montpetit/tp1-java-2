@@ -2,10 +2,9 @@ import java.util.NoSuchElementException;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-
 /**
  * Décrit le son d'un groupe de voyelle en français.
- *
+ * <p>
  * Cette description permet de contenir une ou deux voyelles afin de décrire le son des voyelles dans une syllabe.
  * S'il y a deux voyelles, alors la première voyelle du groupe devrait être une semi-voyelle.
  *
@@ -41,7 +40,6 @@ public class VoyelleFrancais {
      */
     protected boolean nasal = false;
 
-
     /**
      * Construit une voyelle simple.
      *
@@ -55,7 +53,7 @@ public class VoyelleFrancais {
      * Construit une voyelle simple, avec la possibilité de lui attribuer la caractéristique nasale.
      *
      * @param voyelle La voyelle de base du groupe.  Ne doit pas être {@code null}.
-     * @param nasal {@code true} si la voyelle de base est nasale.
+     * @param nasal   {@code true} si la voyelle de base est nasale.
      */
     public VoyelleFrancais( API_Voyelle voyelle, boolean nasal ) {
         this.voyelle = voyelle;
@@ -66,7 +64,7 @@ public class VoyelleFrancais {
      * Construit un groupe de voyelle avec deux voyelles.
      *
      * @param semiVoyelle La semi-voyelle du groupe.
-     * @param voyelle La voyelle de base du groupe.  Ne doit pas être {@code null}.
+     * @param voyelle     La voyelle de base du groupe.  Ne doit pas être {@code null}.
      */
     public VoyelleFrancais( API_Voyelle semiVoyelle, API_Voyelle voyelle ) {
         this.semiVoyelle = semiVoyelle;
@@ -78,8 +76,8 @@ public class VoyelleFrancais {
      * nasale.
      *
      * @param semiVoyelle La semi-voyelle du groupe.
-     * @param voyelle La voyelle de base du groupe.  Ne doit pas être {@code null}.
-     * @param nasal {@code true} si la voyelle de base est nasale.
+     * @param voyelle     La voyelle de base du groupe.  Ne doit pas être {@code null}.
+     * @param nasal       {@code true} si la voyelle de base est nasale.
      */
     public VoyelleFrancais( API_Voyelle semiVoyelle, API_Voyelle voyelle, boolean nasal ) {
         this.semiVoyelle = semiVoyelle;
@@ -87,19 +85,18 @@ public class VoyelleFrancais {
         this.nasal = nasal;
     }
 
-
     /**
      * Consulte la caractéristique sonore 'nasale' du groupe de voyelle.
+     *
      * @return {@code true} si le groupe est nasal.
      */
     public boolean estNasal() {
         return nasal;
     }
 
-
     /**
      * Lit un groupe de voyelles dans le {@code Scanner}.
-     *
+     * <p>
      * Vérifie si les deux prochains caractères du {@code scanner} représentent des voyelles.  Si une seule voyelle est
      * trouvée, alors elle devient la voyelle de base du groupe.  Si deux voyelles sont trouvées, alors la première
      * devient la semi-voyelle et la seconde devient la voyelle de base.  Ensuite, vérifie si le prochain caractère
@@ -108,10 +105,10 @@ public class VoyelleFrancais {
      *
      * @param scanner le {@code Scanner} dans lequel la lecture est effectué.
      * @return le groupe de voyelle lu.
-     * @exception NoSuchElementException s'il n'y a pas de {@code API_Voyelle} valide.
-     * @exception IllegalStateException si le {@code Scanner} est fermé.
+     * @throws NoSuchElementException s'il n'y a pas de {@code API_Voyelle} valide.
+     * @throws IllegalStateException  si le {@code Scanner} est fermé.
      */
-    public static VoyelleFrancais lire(Scanner scanner ) {
+    public static VoyelleFrancais lire( Scanner scanner ) {
         API_Voyelle voyelle = null;
         API_Voyelle voyelle2 = null;
         boolean estNasal = false;
@@ -140,7 +137,6 @@ public class VoyelleFrancais {
                 : new VoyelleFrancais( voyelle, voyelle2, estNasal );
     }
 
-
     /**
      * retourne une chaîne de caractère composée des voyelles du groupe.
      *
@@ -150,7 +146,6 @@ public class VoyelleFrancais {
     public String toString() {
         return "" + ( null == semiVoyelle ? "" : semiVoyelle )
                 + ( nasal ? Character.toString( TILDE_CODE_POINT ) : "" )
-                + voyelle
-                ;
+                + voyelle;
     }
 }

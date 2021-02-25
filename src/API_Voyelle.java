@@ -44,12 +44,10 @@ public enum API_Voyelle {
 
     ;
 
-
     /**
      * Contient toutes les constantes de la classe dans l'ordre des déclarations.
      */
     private static final API_Voyelle [] TOUS = API_Voyelle.class.getEnumConstants();
-
 
     /**
      * Contient la représentation utf de chaque symbole de l'API.
@@ -61,7 +59,6 @@ public enum API_Voyelle {
                     .map( API_Voyelle::toString )
                     .collect( Collectors.joining() );
 
-
     /**
      * Contient un {@code Pattern} de reconnaissance pour identifier si un caractère est un symbole valide de l'API.
      */
@@ -71,7 +68,6 @@ public enum API_Voyelle {
     private Ouverture ouverture;
     private PointArticulationVoyelle pointArticulationVoyelle;
     private Rondeur rondeur;
-
 
     /**
      * Constructeur pour les constantes.
@@ -92,7 +88,6 @@ public enum API_Voyelle {
         this.rondeur = rondeur;
     }
 
-
     /**
      * getter pour le codePoint.
      * @return le codePoint du phonème.
@@ -100,7 +95,6 @@ public enum API_Voyelle {
     public int getCodePoint() {
         return codePoint;
     }
-
 
     /**
      * Indique si la voyelle a la caractéristique sonore 'arrière'.
@@ -112,7 +106,6 @@ public enum API_Voyelle {
         return  pointArticulationVoyelle.estArriere();
     }
 
-
     /**
      * Indique si la voyelle a la caractéristique sonore 'haut'.
      *
@@ -122,7 +115,6 @@ public enum API_Voyelle {
     public boolean estHaut() {
         return ouverture.estHaut();
     }
-
 
     /**
      * Indique si la voyelle a la caractéristique sonore 'arrondi'.
@@ -134,7 +126,6 @@ public enum API_Voyelle {
         return rondeur.estArrondi();
     }
 
-
     /**
      * Indique si la voyelle a la caractéristique sonore 'ouverte'.
      *
@@ -144,7 +135,6 @@ public enum API_Voyelle {
     public boolean estOuverte() {
         return ouverture.estOuverte();
     }
-
 
     /**
      * Lit une voyelle dans le {@code Scanner}.
@@ -162,7 +152,6 @@ public enum API_Voyelle {
 
         return TOUS[ S_TOUS.indexOf( suivant ) ];
     }
-
 
     /**
      * Retourne une chaîne de caractère contenant le symbole de l'API représentant le phonème.

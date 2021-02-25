@@ -5,9 +5,7 @@ public enum Cavite {
     NASALE,
     ND,
     ORALE,
-
     ;
-
 
     /**
      * Retourne si la cavité d'échapement d'air est le nez.

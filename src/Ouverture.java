@@ -16,7 +16,6 @@ public enum Ouverture {
 
     ;
 
-
     /**
      * Indique si la voyelle à une ouverture 'haute'.
      *
@@ -28,7 +27,6 @@ public enum Ouverture {
     public boolean estHaut() {
         return FERMEES == this;
     }
-
 
     /**
      * Indique si la voyelle est ouverte.

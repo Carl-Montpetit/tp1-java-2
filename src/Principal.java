@@ -1,13 +1,10 @@
 import java.util.Scanner;
 
 /**
- * Écrivez vos nom ici :
+ * TP1 INF2120
  *
  * @nom Montpetit, Carl
  * @code_permanent MONC08069000
- *
- * @nom
- * @code_permanent
  */
 
 public class Principal {
@@ -28,12 +25,12 @@ public class Principal {
 
     /**
      * Demande le nombre de syllabe cible que le logiciel doit utiliser pour faire la réduction.
-     *
+     * <p>
      * Cette valeur doit être plus grande ou égal à {@code Constantes.MIN_NOMBRE_SYLLABE}.
      *
-     * @see Constantes
-     * @param scanner  Indique l'endroit où la valeur sera lu.
+     * @param scanner Indique l'endroit où la valeur sera lu.
      * @return l'entier lu dans le {@code Scanner}.
+     * @see Constantes
      */
     public static int demanderNombreDeSyllabe( Scanner scanner ) {
         int resultat = 0;
@@ -41,20 +38,19 @@ public class Principal {
         System.out.print( Textes.MSSG_DEMANDE_NOMBRE_SYLLABE );
         resultat = scanner.nextInt();
 
-        if( resultat < Constantes.MIN_NOMBRE_SYLLABE ) {
+        if ( resultat < Constantes.MIN_NOMBRE_SYLLABE ) {
             Erreur.NOMBRE_SYLLABE.lancer( "  Valeur entrée : " + resultat );
         }
 
         return resultat;
     }
 
-
     /**
      * Programme principal de l'application
      *
      * @param args Les paramètres externe de l'application.
      */
-    public static void main( String [] args ) {
+    public static void main( String[] args ) {
         // cette partie du code lie les entrées.
         Scanner scanner = new Scanner( System.in );
         String nomFichier = demanderNomFichier( scanner );

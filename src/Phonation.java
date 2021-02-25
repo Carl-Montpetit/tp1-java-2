@@ -10,7 +10,6 @@ public enum Phonation {
 
     ;
 
-
     /**
      * Caractéristique sonore indiquant si la consonne est voisée.
      *

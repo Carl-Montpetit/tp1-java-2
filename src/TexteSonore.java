@@ -5,15 +5,14 @@ import java.util.NoSuchElementException;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
-
 /**
  * Une classe pour contenir une suite de syllabe.
- *
+ * <p>
  * Cette classe permet la gestion d'une suite de syllabe.
  *
  * @see SyllabeFrancais
  */
-public class TexteSonore extends ArrayList< SyllabeFrancais > {
+public class TexteSonore extends ArrayList<SyllabeFrancais> {
     /**
      * Le caractère utilisé pour séparé les syllabes lors de la lecture et de l'écriture.
      */
@@ -22,7 +21,8 @@ public class TexteSonore extends ArrayList< SyllabeFrancais > {
     /**
      * Construit une suite de syllabe vide.
      */
-    public TexteSonore() {}
+    public TexteSonore() {
+    }
 
     /**
      * Construit une suite de syllabes à partir du contenu d'un fichier.
@@ -33,10 +33,10 @@ public class TexteSonore extends ArrayList< SyllabeFrancais > {
         File fichier = new File( nomFichier );
         Scanner scanner = null;
 
-        try{
+        try {
             scanner = new Scanner( fichier );
-        } catch( FileNotFoundException e ) {
-            Erreur.FICHIER_INEXISTANT.lancer( "\"" + nomFichier +"\"" );
+        } catch ( FileNotFoundException e ) {
+            Erreur.FICHIER_INEXISTANT.lancer( "\"" + nomFichier + "\"" );
         }
 
         scanner.useDelimiter( "" );
@@ -44,27 +44,25 @@ public class TexteSonore extends ArrayList< SyllabeFrancais > {
         scanner.close();
     }
 
-
     /**
      * Lit une suite de syllabe dans le {@code Scanner}.
-     *
+     * <p>
      * Consulte le {@code Scanner} pour lire une suite de syllabe séparé par le caractère {@code SEPARATEUR}.
      *
      * @param scanner le {@code Scanner} dans lequel la lecture est effectué.
      * @return le groupe de consonne lu.
-     * @exception NoSuchElementException s'il n'y a pas de {@code API_Consonne} valide.
-     * @exception IllegalStateException si le {@code Scanner} est fermé.
+     * @throws NoSuchElementException s'il n'y a pas de {@code API_Consonne} valide.
+     * @throws IllegalStateException  si le {@code Scanner} est fermé.
      */
     private void lire( Scanner scanner ) {
-        try{
-            while( scanner.hasNext() ) {
+        try {
+            while ( scanner.hasNext() ) {
                 add( SyllabeFrancais.lire( scanner ) );
                 scanner.next( SEPARATEUR );
             }
-        } catch( NoSuchElementException e ) {
+        } catch ( NoSuchElementException e ) {
         }
     }
-
 
     /**
      * Construit une chaîne de caractères contenant la suite de syllabe représenté par les symboles de l'API.

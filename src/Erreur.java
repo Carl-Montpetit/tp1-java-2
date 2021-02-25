@@ -16,7 +16,6 @@ public enum Erreur {
      */
     private int _no;
 
-
     /**
      * Construit une erreur.
      *
@@ -28,14 +27,12 @@ public enum Erreur {
         _mssg = mssg;
     }
 
-
     /**
      * affiche le message d'erreur sur la canal d'erreur.
      */
     public void afficher() {
         afficher( "" );
     }
-
 
     /**
      * affiche le message d'erreur suivit d'un message complémentaire sur le canal d'erreur.
@@ -46,7 +43,6 @@ public enum Erreur {
         System.out.println( Textes.MSSG_ERREUR + _mssg + "  " + complement );
     }
 
-
     /**
      * Affiche le message d'erreur sur le canal d'erreur et termine abruptement l'exécution de l'application en
      * retournant le code de l'erreur.
@@ -54,7 +50,6 @@ public enum Erreur {
     public void lancer() {
         lancer( "" );
     }
-
 
     /**
      * affiche le message d'erreur suivit d'un message complémentaire sur le canal d'erreur et termine abruptement

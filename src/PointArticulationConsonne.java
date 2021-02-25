@@ -43,7 +43,6 @@ public enum PointArticulationConsonne {
                 ;
     }
 
-
     /**
      * Caractéristique sonore indiquant les consoones dentale et vélaire.
      *
