@@ -2,6 +2,9 @@
  * Contient les différentes constantes utilisées par le logiciel.
  */
 public class Constantes {
+    /******************************************************************************************************************/
+    // Constantes.
+    /******************************************************************************************************************/
     /**
      * Le nombre minimal de syllabe que l'utilisateur doit entrer pour la réduction.
      */

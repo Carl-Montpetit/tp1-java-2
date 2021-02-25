@@ -13,11 +13,16 @@ import java.util.stream.Collectors;
  * @see SyllabeFrancais
  */
 public class TexteSonore extends ArrayList<SyllabeFrancais> {
+    /******************************************************************************************************************/
+    // Variables et constantes.
+    /******************************************************************************************************************/
     /**
      * Le caractère utilisé pour séparé les syllabes lors de la lecture et de l'écriture.
      */
     public static final String SEPARATEUR = ".";
-
+    /******************************************************************************************************************/
+    // Méthodes de construction.
+    /******************************************************************************************************************/
     /**
      * Construit une suite de syllabe vide.
      */
@@ -45,6 +50,19 @@ public class TexteSonore extends ArrayList<SyllabeFrancais> {
     }
 
     /**
+     * Construit une chaîne de caractères contenant la suite de syllabe représenté par les symboles de l'API.
+     *
+     * @return la chaîne construite.  S'il n'y a pas de syllabe dans la suite, alors la chaîne sera vide.
+     */
+    @Override
+    public String toString() {
+        return stream().map( SyllabeFrancais::toString ).collect( Collectors.joining( SEPARATEUR ) );
+    }
+
+    /******************************************************************************************************************/
+    // Méthodes de lecture.
+    /******************************************************************************************************************/
+    /**
      * Lit une suite de syllabe dans le {@code Scanner}.
      * <p>
      * Consulte le {@code Scanner} pour lire une suite de syllabe séparé par le caractère {@code SEPARATEUR}.
@@ -63,14 +81,8 @@ public class TexteSonore extends ArrayList<SyllabeFrancais> {
         } catch ( NoSuchElementException e ) {
         }
     }
+    /******************************************************************************************************************/
+    // Méthodes de de retour.
+    /******************************************************************************************************************/
 
-    /**
-     * Construit une chaîne de caractères contenant la suite de syllabe représenté par les symboles de l'API.
-     *
-     * @return la chaîne construite.  S'il n'y a pas de syllabe dans la suite, alors la chaîne sera vide.
-     */
-    @Override
-    public String toString() {
-        return stream().map( SyllabeFrancais::toString ).collect( Collectors.joining( SEPARATEUR ) );
-    }
 }

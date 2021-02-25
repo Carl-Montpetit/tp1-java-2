@@ -173,6 +173,9 @@ public enum API_Consonne {
             Cavite.ORALE, Ecoulement.CENTRALE, Flux.PULMONAIRE ),
     ;
 
+    /******************************************************************************************************************/
+    // Constantes
+    /******************************************************************************************************************/
     /**
      * Contient toutes les constantes de la classe dans l'ordre des déclarations.
      */

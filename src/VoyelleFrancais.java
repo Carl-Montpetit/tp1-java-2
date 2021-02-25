@@ -13,6 +13,9 @@ import java.util.regex.Pattern;
  * @see <a href="https://fr.wiktionary.org/wiki/Annexe:Prononciation/fran%C3%A7ais">référence</a>
  */
 public class VoyelleFrancais {
+    /******************************************************************************************************************/
+    // Variables et constantes.
+    /******************************************************************************************************************/
     /**
      * code utf-16 pour le tilde utilisé pour indiquer les voyelles nasales selon l'API.
      */
@@ -39,7 +42,9 @@ public class VoyelleFrancais {
      * Indique si la voyelle de base est une voyelle nasale.
      */
     protected boolean nasal = false;
-
+    /******************************************************************************************************************/
+    // Méthodes de construction.
+    /******************************************************************************************************************/
     /**
      * Construit une voyelle simple.
      *
@@ -84,7 +89,9 @@ public class VoyelleFrancais {
         this.voyelle = voyelle;
         this.nasal = nasal;
     }
-
+    /******************************************************************************************************************/
+    // Méthodes de validation.
+    /******************************************************************************************************************/
     /**
      * Consulte la caractéristique sonore 'nasale' du groupe de voyelle.
      *
@@ -93,7 +100,9 @@ public class VoyelleFrancais {
     public boolean estNasal() {
         return nasal;
     }
-
+    /******************************************************************************************************************/
+    // Méthodes de lecture.
+    /******************************************************************************************************************/
     /**
      * Lit un groupe de voyelles dans le {@code Scanner}.
      * <p>
@@ -136,7 +145,9 @@ public class VoyelleFrancais {
                 ? new VoyelleFrancais( voyelle, estNasal )
                 : new VoyelleFrancais( voyelle, voyelle2, estNasal );
     }
-
+    /******************************************************************************************************************/
+    // Méthodes de retour.
+    /******************************************************************************************************************/
     /**
      * retourne une chaîne de caractère composée des voyelles du groupe.
      *

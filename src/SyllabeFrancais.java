@@ -1,7 +1,6 @@
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
-
 /**
  * Représente l'unité de base pour la prononciation en français.
  * <p>
@@ -15,6 +14,9 @@ import java.util.Scanner;
  * @see <a href="https://fr.wiktionary.org/wiki/Annexe:Prononciation/fran%C3%A7ais">référence</a>
  */
 public class SyllabeFrancais {
+    /******************************************************************************************************************/
+    // Variables et constantes.
+    /******************************************************************************************************************/
     /**
      * Le groupe de consonne pour l'attaque de la syllabe.  S'il n'est pas présent, alors la valeur est à {@code null}.
      */
@@ -29,7 +31,9 @@ public class SyllabeFrancais {
      * Le groupe de consonne pour le code de la syllabe.  S'il n'est pas présent, alors la valeur est à {@code null}.
      */
     protected ConsonneFrancais coda = null;
-
+    /******************************************************************************************************************/
+    // Méthodes de construction.
+    /******************************************************************************************************************/
     /**
      * Construit une syllabe avec un noyau seulement.
      *
@@ -73,7 +77,9 @@ public class SyllabeFrancais {
         this.noyau = noyau;
         this.coda = coda;
     }
-
+    /******************************************************************************************************************/
+    // Méthodes de lecture.
+    /******************************************************************************************************************/
     /**
      * Lit une syllabe dans le {@code Scanner}.
      * <p>
@@ -105,7 +111,9 @@ public class SyllabeFrancais {
 
         return new SyllabeFrancais( attaque, noyau, coda );
     }
-
+    /******************************************************************************************************************/
+    // Méthodes de retour.
+    /******************************************************************************************************************/
     /**
      * retourne une chaîne de caractère composée des phonèmes de la syllabe.
      *

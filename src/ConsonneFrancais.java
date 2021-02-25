@@ -11,6 +11,9 @@ import java.util.Scanner;
  * @see <a href="https://fr.wiktionary.org/wiki/Annexe:Prononciation/fran%C3%A7ais">référence</a>
  */
 public class ConsonneFrancais {
+    /******************************************************************************************************************/
+    // Variables et constantes.
+    /******************************************************************************************************************/
     /**
      * La consonne de base du groupe de consonne.
      * Ne doit pas être {@code null}.
@@ -42,7 +45,9 @@ public class ConsonneFrancais {
         this.consonne1 = consonne1;
         this.consonne2 = consonne2;
     }
-
+    /******************************************************************************************************************/
+    // Méthodes de lecture.
+    /******************************************************************************************************************/
     /**
      * Lit un groupe de consonnes dans le {@code Scanner}.
      * <p>
@@ -70,7 +75,9 @@ public class ConsonneFrancais {
 
         return resultat;
     }
-
+    /******************************************************************************************************************/
+    // Méthodes de retour.
+    /******************************************************************************************************************/
     /**
      * retourne une chaîne de caractère composée des consonnes du groupe.
      *
