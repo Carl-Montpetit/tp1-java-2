@@ -196,6 +196,9 @@ public enum API_Consonne {
      */
     private static final Pattern PATRON_CHOIX_TOUS = Pattern.compile( "[" + S_TOUS + "]" );
 
+    /******************************************************************************************************************/
+    // Constructeur.
+    /******************************************************************************************************************/
     /**
      * Constructeur pour les constantes.
      *
@@ -224,6 +227,9 @@ public enum API_Consonne {
         this.flux = flux;
     }
 
+    /******************************************************************************************************************/
+    // Variables (privé).
+    /******************************************************************************************************************/
     private int codePoint;
     private ModeArticulation modeArticulation;
     private PointArticulationConsonne pointArticulationConsonne;
@@ -232,6 +238,9 @@ public enum API_Consonne {
     private Ecoulement ecoulement;
     private Flux flux;
 
+    /******************************************************************************************************************/
+    // Getter.
+    /******************************************************************************************************************/
     /**
      * getter pour le codePoint.
      * @return le codePoint du phonème.
@@ -240,6 +249,9 @@ public enum API_Consonne {
         return codePoint;
     }
 
+    /******************************************************************************************************************/
+    // Méthodes de validation.
+    /******************************************************************************************************************/
     /**
      * Indique si la consonne a la caractéristique sonore 'vocalique'.
      *
@@ -300,6 +312,9 @@ public enum API_Consonne {
         return pointArticulationConsonne.estAigu();
     }
 
+    /******************************************************************************************************************/
+    // Méthode de lecture.
+    /******************************************************************************************************************/
     /**
      * Lit une consonne dans le {@code Scanner}.
      *
@@ -317,6 +332,9 @@ public enum API_Consonne {
         return TOUS[ S_TOUS.indexOf( suivant ) ];
     }
 
+    /******************************************************************************************************************/
+    // Méthodes de retour. (toString)
+    /******************************************************************************************************************/
     /**
      * Retourne une chaîne de caractère contenant le symbole de l'API représentant le phonème.
      *

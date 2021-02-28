@@ -1,4 +1,5 @@
 import java.util.NoSuchElementException;
+import java.util.Objects;
 import java.util.Scanner;
 
 /**
@@ -86,5 +87,30 @@ public class ConsonneFrancais {
     @Override
     public String toString() {
         return "" + consonne1 + ( null == consonne2 ? "" : consonne2 );
+    }
+    /******************************************************************************************************************/
+    // Getters.
+    /******************************************************************************************************************/
+    public API_Consonne getConsonne1() {
+        return consonne1;
+    }
+
+    public API_Consonne getConsonne2() {
+        return consonne2;
+    }
+    /******************************************************************************************************************/
+    // Equals & hashCode.
+    /******************************************************************************************************************/
+    @Override
+    public boolean equals( Object o ) {
+        if ( this == o ) return true;
+        if ( !( o instanceof ConsonneFrancais ) ) return false;
+        ConsonneFrancais that = ( ConsonneFrancais ) o;
+        return getConsonne1() == that.getConsonne1() && getConsonne2() == that.getConsonne2();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash( getConsonne1(), getConsonne2() );
     }
 }

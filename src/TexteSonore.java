@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.ListIterator;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 import java.util.stream.Collectors;
@@ -81,8 +82,27 @@ public class TexteSonore extends ArrayList<SyllabeFrancais> {
         } catch ( NoSuchElementException e ) {
         }
     }
+
     /******************************************************************************************************************/
-    // Méthodes de de retour.
+    // Méthodes de retour.
     /******************************************************************************************************************/
+    /**
+     * Calcule le nombre d'occurrence des syllabes dans le texte.
+     * @param texteSonore
+     * @return compteur
+     */
+    public int occurrenceTexteSonore( ArrayList<SyllabeFrancais> texteSonore ) {
+        int compteur = 0;
+
+        for ( int i = 0; i < texteSonore.size(); i++ ) {
+            if ( texteSonore.get( i ).equals( texteSonore.get( 0 ) ) ) {
+                compteur = compteur + 1;
+                System.out.println( texteSonore.get(0) + " = " + compteur );
+            }
+        }
+        return compteur;
+    }
+
+
 
 }

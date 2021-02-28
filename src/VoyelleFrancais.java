@@ -1,4 +1,5 @@
 import java.util.NoSuchElementException;
+import java.util.Objects;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
@@ -43,7 +44,7 @@ public class VoyelleFrancais {
      */
     protected boolean nasal = false;
     /******************************************************************************************************************/
-    // Méthodes de construction.
+    // Constructeurs.
     /******************************************************************************************************************/
     /**
      * Construit une voyelle simple.
@@ -158,5 +159,43 @@ public class VoyelleFrancais {
         return "" + ( null == semiVoyelle ? "" : semiVoyelle )
                 + ( nasal ? Character.toString( TILDE_CODE_POINT ) : "" )
                 + voyelle;
+    }
+    /******************************************************************************************************************/
+    // Getters.
+    /******************************************************************************************************************/
+    public static int getTildeCodePoint() {
+        return TILDE_CODE_POINT;
+    }
+
+    public static Pattern getTildePattern() {
+        return TILDE_PATTERN;
+    }
+
+    public API_Voyelle getSemiVoyelle() {
+        return semiVoyelle;
+    }
+
+    public API_Voyelle getVoyelle() {
+        return voyelle;
+    }
+
+    public boolean isNasal() {
+        return nasal;
+    }
+    /******************************************************************************************************************/
+    // Equals & hashCode.
+    /******************************************************************************************************************/
+    @Override
+    public boolean equals( Object o ) {
+        if ( this == o ) return true;
+        if ( !( o instanceof VoyelleFrancais ) ) return false;
+        VoyelleFrancais that = ( VoyelleFrancais ) o;
+        return isNasal() == that.isNasal() && getSemiVoyelle() == that.getSemiVoyelle()
+                && getVoyelle() == that.getVoyelle();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash( getSemiVoyelle(), getVoyelle(), isNasal() );
     }
 }

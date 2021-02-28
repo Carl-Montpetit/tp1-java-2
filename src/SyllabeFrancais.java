@@ -1,4 +1,5 @@
 import java.util.NoSuchElementException;
+import java.util.Objects;
 import java.util.Scanner;
 
 /**
@@ -124,5 +125,35 @@ public class SyllabeFrancais {
         return "" + ( null == attaque ? "" : attaque )
                 + noyau
                 + ( null == coda ? "" : coda );
+    }
+    /******************************************************************************************************************/
+    // Getters.
+    /******************************************************************************************************************/
+    public ConsonneFrancais getAttaque() {
+        return attaque;
+    }
+
+    public VoyelleFrancais getNoyau() {
+        return noyau;
+    }
+
+    public ConsonneFrancais getCoda() {
+        return coda;
+    }
+    /******************************************************************************************************************/
+    // Equals & hashCode.
+    /******************************************************************************************************************/
+    @Override
+    public boolean equals( Object o ) {
+        if ( this == o ) return true;
+        if ( !( o instanceof SyllabeFrancais ) ) return false;
+        SyllabeFrancais that = ( SyllabeFrancais ) o;
+        return Objects.equals( getAttaque(), that.getAttaque() ) && Objects.equals( getNoyau(), that.getNoyau() )
+                && Objects.equals( getCoda(), that.getCoda() );
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash( getAttaque(), getNoyau(), getCoda() );
     }
 }

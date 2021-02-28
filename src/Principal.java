@@ -65,13 +65,26 @@ public class Principal {
 
         TexteSonore texteSonore = new TexteSonore( nomFichier );
 
+        /**************************************************************************************************************/
         // placer vos actions ici :
+        /**************************************************************************************************************/
 
+        // Comparaison objet syllabe (works!)
+//        SyllabeFrancais syllabe1 = texteSonore.get( 0 );
+//        System.out.println( syllabe1 );
+//        SyllabeFrancais syllabe2 = texteSonore.get( 4 );
+//        System.out.println( syllabe2 );
+//        System.out.println( syllabe1.equals( syllabe2 ) );
+//
+//        System.out.println( texteSonore.occurrenceTexteSonore( texteSonore ) );
 
+//        texteSonore.listIterator(texteSonore);
+
+        /**************************************************************************************************************/
         // cette partie du code affiche les résultats, modifier au besoin.
-        System.out.println( texteSonore );
-        System.out.println( nombreDeSyllabes );
+        /**************************************************************************************************************/
+//        System.out.println( texteSonore );
+//        System.out.println( nombreDeSyllabes );
     }
     /******************************************************************************************************************/
-
 }

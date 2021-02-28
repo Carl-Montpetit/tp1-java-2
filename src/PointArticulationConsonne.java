@@ -5,6 +5,9 @@
  * @see <a href="https://fr.wikipedia.org/wiki/Point_d%27articulation">référence</a>
  */
 public enum PointArticulationConsonne {
+    /******************************************************************************************************************/
+    // Constantes
+    /******************************************************************************************************************/
     ALVEOLAIRE,
     ALVEOLO_PALATALE,
     BILABIAL,
@@ -25,6 +28,9 @@ public enum PointArticulationConsonne {
 
     ;
 
+    /******************************************************************************************************************/
+    // Méthodes de validation.
+    /******************************************************************************************************************/
     /**
      * Caractéristique sonore indiquant les consoones articulé contre le palais.
      *
