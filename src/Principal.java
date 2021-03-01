@@ -89,8 +89,14 @@ public class Principal {
             System.out.println( "Coda : " + syllabesUniques.get( i ).getCoda() );
             System.out.println( "Noyau : " + syllabesUniques.get( i ).getNoyau() );
             System.out.println( "Class : " + syllabesUniques.get( i ).getClass() + "\n" );
+            System.out.println( "Semi-voyelle : " + syllabesUniques.get( i ).getNoyau().getSemiVoyelle());
         }
         // code.
+        // fdsggfgfgfdg
+
+
+
+
 
         /**************************************************************************************************************/
         // cette partie du code affiche les résultats, modifier au besoin.
