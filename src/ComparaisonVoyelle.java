@@ -3,16 +3,18 @@ import java.util.regex.Pattern;
 public class ComparaisonVoyelle {
 
     /**
+     * La 2e voyelle du groupe de voyelle.
+     * La valeur {@code null} est utilisé pour indiquer qu'elle n'est pas présente dans le groupe.
+     */
+    protected API_Voyelle voyelleB = null;
+
+    /**
      * La 1re voyelle du groupe.
      * Peut être null.
      */
     protected API_Voyelle voyelleA = null;
 
-    /**
-     * La 2e voyelle du groupe de voyelle.
-     * La valeur {@code null} est utilisé pour indiquer qu'elle n'est pas présente dans le groupe.
-     */
-    protected API_Voyelle voyelleB = null;
+
 
     /**
      * Construit un groupe avec deux silences.
@@ -37,7 +39,7 @@ public class ComparaisonVoyelle {
      * @param voyelleA la 1re voyelle
      * @param voyelleB la 2e voyelle
      */
-    public ComparaisonVoyelle(API_Voyelle voyelleA, API_Voyelle voyelleB) {
+    public ComparaisonVoyelle(API_Voyelle voyelleB,API_Voyelle voyelleA) {
         this.voyelleA = voyelleA;
         this.voyelleB = voyelleB;
     }
@@ -61,10 +63,10 @@ public class ComparaisonVoyelle {
                 (getVoyelleA()==null || getVoyelleB()==null)){
             distance = 0;
         }else {
-            if ((getVoyelleA().estArrondi() && getVoyelleB().estArrondi())) {
+            if ((!getVoyelleA().estArrondi()==getVoyelleB().estArrondi())) {
                 distance++;
             }
-            if ((getVoyelleA().estOuverte() && getVoyelleB().estOuverte())) {
+            if ((!getVoyelleA().estOuverte()==getVoyelleB().estOuverte())) {
                 distance++;
             }
         }
@@ -78,17 +80,17 @@ public class ComparaisonVoyelle {
      * @return la distance totale entre les deux consonnes
      */
     public int deuxVoyelles (int distance1) {
-        int distance = 0;
+        int distance;
         if (getVoyelleA()==null && getVoyelleB()==null){
             distance = 0;
         }else if (getVoyelleA()==null || getVoyelleB()==null) {
-            distance = 6;
+            distance = 4;
         } else {
             distance = distance1;
-            if ((getVoyelleA().estArriere() && getVoyelleB().estArriere())) {
+            if ((!getVoyelleA().estArriere()==getVoyelleB().estArriere())) {
                 distance++;
             }
-            if ((getVoyelleA().estHaut() && getVoyelleB().estHaut())) {
+            if ((!getVoyelleA().estHaut()==getVoyelleB().estHaut())) {
                 distance++;
             }
         }

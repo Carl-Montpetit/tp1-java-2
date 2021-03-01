@@ -91,16 +91,24 @@ public class Principal {
             System.out.println( "Coda : " + syllabesUniques.get( i ).getCoda() );
             System.out.println( "Noyau : " + syllabesUniques.get( i ).getNoyau() );
             System.out.println( "Class : " + syllabesUniques.get( i ).getClass() + "\n" );
+            System.out.println(syllabesUniques.get(i).getNoyau().getVoyelle().estOuverte());
+            System.out.println(syllabesUniques.get(i).getNoyau().getSemiVoyelle().estOuverte());
         }
         // Distance entre deux phonèmes de consonne.
         for ( int i = 0; i < syllabesUniques.size(); i++ ) {
             //System.out.println(syllabesUniques.get( i ).getAttaque()
             // .deuxConsonnes( syllabesUniques.get( i ).getAttaque().partieConsonne() ) );
         }
-        ComparaisonConsonne test =
-                new ComparaisonConsonne(syllabesUniques.get( 0 ).getAttaque().getConsonne1()
-                        ,syllabesUniques.get( 0 ).getAttaque().getConsonne2());
-        System.out.println(test.deuxConsonnes(test.partieConsonne()));
+        //ComparaisonConsonne test =
+        //        new ComparaisonConsonne(syllabesUniques.get( 0 ).getAttaque
+        //        ().getConsonne1()
+        //                ,syllabesUniques.get( 0 ).getAttaque().getConsonne2
+        //                ());
+        //System.out.println(test.deuxConsonnes(test.partieConsonne()));
+        ComparaisonVoyelle test2 =
+                new ComparaisonVoyelle(syllabesUniques.get(0).getNoyau().getVoyelle(),
+                        syllabesUniques.get(0).getNoyau().getSemiVoyelle());
+        System.out.println(test2.deuxVoyelles(test2.partieVoyelle()));
         /**************************************************************************************************************/
         // cette partie du code affiche les résultats, modifier au besoin.
         /**************************************************************************************************************/
