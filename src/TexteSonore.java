@@ -87,22 +87,34 @@ public class TexteSonore extends ArrayList<SyllabeFrancais> {
     // Méthodes de retour.
     /******************************************************************************************************************/
     /**
-     * Calcule le nombre d'occurrence des syllabes dans le texte.
+     * Calcule le nombre d'occurrence d'une syllabe dans le texte.
      * @param texteSonore
-     * @return compteur
+     * @return nombre d'occurrence
      */
-    public int occurrenceTexteSonore( ArrayList<SyllabeFrancais> texteSonore ) {
+    public int occurrenceDunSonDansTexteSonore( TexteSonore texteSonore, SyllabeFrancais syllabe ) {
         int compteur = 0;
 
         for ( int i = 0; i < texteSonore.size(); i++ ) {
-            if ( texteSonore.get( i ).equals( texteSonore.get( 0 ) ) ) {
-                compteur = compteur + 1;
-                System.out.println( texteSonore.get(0) + " = " + compteur );
+            if ( texteSonore.get( i ).equals( syllabe ) ) {
+                compteur++;
             }
         }
         return compteur;
     }
 
+    /**
+     * Crée un nouveau ArrayList sans occurrences.
+     * @param texteSonore
+     * @return ArrayList contenant les éléments unique sans occurrences
+     */
+    public TexteSonore syllabeUnique( TexteSonore texteSonore ) {
+        TexteSonore texteÉlémentsUniques = new TexteSonore();
 
-
+        for ( int i = 0; i < texteSonore.size(); i++ ) {
+            if ( !texteÉlémentsUniques.contains( texteSonore.get( i ) ) ) {
+                texteÉlémentsUniques.add( texteSonore.get( i ) );
+            }
+        }
+        return texteÉlémentsUniques;
+    }
 }

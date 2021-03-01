@@ -68,17 +68,21 @@ public class Principal {
         /**************************************************************************************************************/
         // placer vos actions ici :
         /**************************************************************************************************************/
+        // Calcul des Occurrences (works!)
+        /**************************************************************************************************************/
+        System.out.println("Le texte sonore est : " + texteSonore);
 
-        // Comparaison objet syllabe (works!)
-//        SyllabeFrancais syllabe1 = texteSonore.get( 0 );
-//        System.out.println( syllabe1 );
-//        SyllabeFrancais syllabe2 = texteSonore.get( 4 );
-//        System.out.println( syllabe2 );
-//        System.out.println( syllabe1.equals( syllabe2 ) );
-//
-//        System.out.println( texteSonore.occurrenceTexteSonore( texteSonore ) );
+        TexteSonore sonsUnique = new TexteSonore();
+        sonsUnique = texteSonore.syllabeUnique( texteSonore );
+        System.out.println("Les sons unique sont : " + sonsUnique);
+        for ( int i = 0; i < sonsUnique.size(); i++ ) {
 
-//        texteSonore.listIterator(texteSonore);
+            System.out.println(sonsUnique.get(i) + " : " + "Occurences = " +
+                    texteSonore.occurrenceDunSonDansTexteSonore( texteSonore, sonsUnique.get(i) ) );
+        }
+        /**************************************************************************************************************/
+        // Distance sonore.
+        /**************************************************************************************************************/
 
         /**************************************************************************************************************/
         // cette partie du code affiche les résultats, modifier au besoin.

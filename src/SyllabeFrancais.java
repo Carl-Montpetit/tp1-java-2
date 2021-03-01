@@ -1,6 +1,4 @@
-import java.util.NoSuchElementException;
-import java.util.Objects;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * Représente l'unité de base pour la prononciation en français.
@@ -16,7 +14,7 @@ import java.util.Scanner;
  */
 public class SyllabeFrancais {
     /******************************************************************************************************************/
-    // Variables et constantes.
+    // Variables.
     /******************************************************************************************************************/
     /**
      * Le groupe de consonne pour l'attaque de la syllabe.  S'il n'est pas présent, alors la valeur est à {@code null}.
@@ -32,8 +30,9 @@ public class SyllabeFrancais {
      * Le groupe de consonne pour le code de la syllabe.  S'il n'est pas présent, alors la valeur est à {@code null}.
      */
     protected ConsonneFrancais coda = null;
+
     /******************************************************************************************************************/
-    // Méthodes de construction.
+    // Constructeurs.
     /******************************************************************************************************************/
     /**
      * Construit une syllabe avec un noyau seulement.
@@ -78,8 +77,9 @@ public class SyllabeFrancais {
         this.noyau = noyau;
         this.coda = coda;
     }
+
     /******************************************************************************************************************/
-    // Méthodes de lecture.
+    // Méthode de lecture.
     /******************************************************************************************************************/
     /**
      * Lit une syllabe dans le {@code Scanner}.
@@ -112,6 +112,7 @@ public class SyllabeFrancais {
 
         return new SyllabeFrancais( attaque, noyau, coda );
     }
+
     /******************************************************************************************************************/
     // Méthodes de retour.
     /******************************************************************************************************************/
@@ -126,6 +127,20 @@ public class SyllabeFrancais {
                 + noyau
                 + ( null == coda ? "" : coda );
     }
+
+    /******************************************************************************************************************/
+    // Méthodes de validation.
+    /******************************************************************************************************************/
+    /**
+     * Vérifie si deux syllabes sont pareil.
+     * @param syllabeUn
+     * @param syllabeDeux
+     * @return true si les deux syllabes sont pareil et false s'ils sont différentes.
+     */
+    public boolean deuxSyllabesPareils(SyllabeFrancais syllabeUn, SyllabeFrancais syllabeDeux) {
+        return syllabeUn.equals( syllabeDeux );
+    }
+
     /******************************************************************************************************************/
     // Getters.
     /******************************************************************************************************************/
@@ -140,6 +155,7 @@ public class SyllabeFrancais {
     public ConsonneFrancais getCoda() {
         return coda;
     }
+
     /******************************************************************************************************************/
     // Equals & hashCode.
     /******************************************************************************************************************/
