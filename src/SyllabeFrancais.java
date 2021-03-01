@@ -129,19 +129,6 @@ public class SyllabeFrancais {
     }
 
     /******************************************************************************************************************/
-    // Méthodes de validation.
-    /******************************************************************************************************************/
-    /**
-     * Vérifie si deux syllabes sont pareil.
-     * @param syllabeUn
-     * @param syllabeDeux
-     * @return true si les deux syllabes sont pareil et false s'ils sont différentes.
-     */
-    public boolean deuxSyllabesPareils(SyllabeFrancais syllabeUn, SyllabeFrancais syllabeDeux) {
-        return syllabeUn.equals( syllabeDeux );
-    }
-
-    /******************************************************************************************************************/
     // Getters.
     /******************************************************************************************************************/
     public ConsonneFrancais getAttaque() {
@@ -157,7 +144,7 @@ public class SyllabeFrancais {
     }
 
     /******************************************************************************************************************/
-    // Equals & hashCode.
+    // Equals & hashCode. (Override)
     /******************************************************************************************************************/
     @Override
     public boolean equals( Object o ) {

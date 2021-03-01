@@ -66,23 +66,31 @@ public class Principal {
         TexteSonore texteSonore = new TexteSonore( nomFichier );
 
         /**************************************************************************************************************/
-        // placer vos actions ici :
+        // PLACER LES ACTIONS ICI :
         /**************************************************************************************************************/
         // Calcul des Occurrences (works!)
         /**************************************************************************************************************/
         System.out.println("Le texte sonore est : " + texteSonore);
+        TexteSonore syllabesUniques = new TexteSonore();
+        syllabesUniques = texteSonore.syllabeUnique( texteSonore );
+        System.out.println("Les syllabes unique sont : " + syllabesUniques + "\n");
 
-        TexteSonore sonsUnique = new TexteSonore();
-        sonsUnique = texteSonore.syllabeUnique( texteSonore );
-        System.out.println("Les sons unique sont : " + sonsUnique);
-        for ( int i = 0; i < sonsUnique.size(); i++ ) {
-
-            System.out.println(sonsUnique.get(i) + " : " + "Occurences = " +
-                    texteSonore.occurrenceDunSonDansTexteSonore( texteSonore, sonsUnique.get(i) ) );
+        for ( int i = 0; i < syllabesUniques.size(); i++ ) {
+            System.out.println(syllabesUniques.get( i ) + " : " + "Occurences = " +
+                    texteSonore.occurrenceDunSonDansTexteSonore( texteSonore, syllabesUniques.get( i ) ) );
         }
         /**************************************************************************************************************/
         // Distance sonore.
         /**************************************************************************************************************/
+        //Informations sur les syllabes (console).
+        for ( int i = 0; i < syllabesUniques.size(); i++ ) {
+            System.out.println( "Les charactéristiques de " + syllabesUniques.get( i ) + " sont : " );
+            System.out.println( "Attack : " + syllabesUniques.get( i ).getAttaque() );
+            System.out.println( "Coda : " + syllabesUniques.get( i ).getCoda() );
+            System.out.println( "Noyau : " + syllabesUniques.get( i ).getNoyau() );
+            System.out.println( "Class : " + syllabesUniques.get( i ).getClass() + "\n" );
+        }
+        // code.
 
         /**************************************************************************************************************/
         // cette partie du code affiche les résultats, modifier au besoin.
