@@ -91,10 +91,11 @@ public class Principal {
             System.out.println( "Coda : " + syllabesUniques.get( i ).getCoda() );
             System.out.println( "Noyau : " + syllabesUniques.get( i ).getNoyau() );
             System.out.println( "Class : " + syllabesUniques.get( i ).getClass() + "\n" );
-            System.out.println( "Semi-voyelle : " + syllabesUniques.get( i ).getNoyau().getSemiVoyelle().estOuverte());
+            //System.out.println( "Semi-voyelle : " + syllabesUniques.get( i
+            // ).getNoyau().getSemiVoyelle().estOuverte());
         }
 
-        syllabesUniques.get(0).getAttaque().deuxConsonnes(syllabesUniques.get(1).getAttaque().partieConsonne());
+        System.out.println(syllabesUniques.get(1).getAttaque().deuxConsonnes(syllabesUniques.get(1).getAttaque().partieConsonne()));
         // code.
         /**************************************************************************************************************/
         // cette partie du code affiche les résultats, modifier au besoin.
