@@ -97,15 +97,16 @@ public class Principal {
             // .getSemiVoyelle().estOuverte());
         }
         // Distance entre deux phonèmes de consonne.
-        for ( int i = 0; i < syllabesUniques.size(); i++ ) {
-            //System.out.println(syllabesUniques.get( i ).getAttaque()
-            // .deuxConsonnes( syllabesUniques.get( i ).getAttaque().partieConsonne() ) );
-        }
+//        for ( int i = 0; i < syllabesUniques.size(); i++ ) {
+//            System.out.println(syllabesUniques.get( i ).getAttaque()
+//             .deuxConsonnes( syllabesUniques.get( i ).getAttaque().partieConsonne() ) );
+//        }
         ComparaisonConsonne test =
                 new ComparaisonConsonne(syllabesUniques.get( 1 ).getAttaque
                 ().getConsonne1()
                         ,syllabesUniques.get( 1 ).getAttaque().getConsonne2
                         ());
+        System.out.println( test.toString() );
         System.out.println(test.deuxConsonnes(test.partieConsonne()));
         //ComparaisonVoyelle test2 =
         //        new ComparaisonVoyelle(syllabesUniques.get(0).getNoyau()

@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class ComparaisonConsonne {
     /******************************************************************************************************************/
     // Variables.
@@ -14,6 +16,9 @@ public class ComparaisonConsonne {
      */
     protected API_Consonne consonneB = null;
 
+    /******************************************************************************************************************/
+    // Constructeurs.
+    /******************************************************************************************************************/
     /**
      * Construit un groupe avec deux silences.
      */
@@ -40,7 +45,9 @@ public class ComparaisonConsonne {
         this.consonneA = consonneA;
         this.consonneB = consonneB;
     }
-
+    /******************************************************************************************************************/
+    // Getters.
+    /******************************************************************************************************************/
     public API_Consonne getConsonneA() {
         return consonneA;
     }
@@ -49,6 +56,9 @@ public class ComparaisonConsonne {
         return consonneB;
     }
 
+    /******************************************************************************************************************/
+    // Méthodes de retour.
+    /******************************************************************************************************************/
     /**
      * à testé
      * retourne la distance de 2 consonnes avec 3 caractéristiques
@@ -72,7 +82,6 @@ public class ComparaisonConsonne {
         }
         return distance;
     }
-
 
     /**
      * à testé
@@ -99,6 +108,32 @@ public class ComparaisonConsonne {
             }
         }
         return distance;
+    }
+    /******************************************************************************************************************/
+    // toString.
+    /******************************************************************************************************************/
+    @Override
+    public String toString() {
+        return "ComparaisonConsonne{" +
+                "consonneA=" + consonneA +
+                ", consonneB=" + consonneB +
+                '}';
+    }
+
+    /******************************************************************************************************************/
+    // Equals & hashCode.
+    /******************************************************************************************************************/
+    @Override
+    public boolean equals( Object o ) {
+        if ( this == o ) return true;
+        if ( !( o instanceof ComparaisonConsonne ) ) return false;
+        ComparaisonConsonne that = ( ComparaisonConsonne ) o;
+        return getConsonneA() == that.getConsonneA() && getConsonneB() == that.getConsonneB();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash( getConsonneA(), getConsonneB() );
     }
 }
 
