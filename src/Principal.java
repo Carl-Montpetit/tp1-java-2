@@ -94,7 +94,7 @@ public class Principal {
             System.out.println( "Semi-voyelle : " + syllabesUniques.get( i ).getNoyau().getSemiVoyelle().estOuverte());
         }
 
-
+        syllabesUniques.get(0).getAttaque().deuxConsonnes(syllabesUniques.get(1).getAttaque().partieConsonne());
         // code.
         /**************************************************************************************************************/
         // cette partie du code affiche les résultats, modifier au besoin.

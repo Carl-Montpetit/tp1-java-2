@@ -122,8 +122,8 @@ public class ConsonneFrancais {
      */
     public int partieConsonne(){
         int distance = 0;
-        if((consonne1.equals(null) && consonne2.equals(null)) ||
-                (consonne1.equals(null) || consonne2.equals(null))){
+        if((getConsonne1()==null && getConsonne2()==null) ||
+                (getConsonne1()==null || getConsonne2()==null)){
             distance = 0;
         }else {
             if (!(consonne1.estContinu() && consonne2.estContinu())) {
@@ -148,9 +148,9 @@ public class ConsonneFrancais {
      */
     public int deuxConsonnes (int distance1) {
         int distance = 0;
-        if (consonne1.equals(null) && consonne2.equals(null)){
+        if (getConsonne1()==null && getConsonne2()==null){
             distance = 0;
-        }else if (consonne1.equals(null) || consonne2.equals(null)) {
+        }else if (getConsonne1()==null || getConsonne2()==null) {
             distance = 6;
         } else {
             if (!(consonne1.estVocalique() && consonne2.estVocalique())) {
