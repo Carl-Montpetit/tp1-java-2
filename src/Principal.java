@@ -94,8 +94,10 @@ public class Principal {
         }
         // Distance entre deux phonèmes de consonne.
         for ( int i = 0; i < syllabesUniques.size(); i++ ) {
-            System.out.println(syllabesUniques.get( i ).getAttaque().deuxConsonnes( syllabesUniques.get( i ).getAttaque().partieConsonne() ) );
+            //System.out.println(syllabesUniques.get( i ).getAttaque()
+            // .deuxConsonnes( syllabesUniques.get( i ).getAttaque().partieConsonne() ) );
         }
+
         /**************************************************************************************************************/
         // cette partie du code affiche les résultats, modifier au besoin.
         /**************************************************************************************************************/
