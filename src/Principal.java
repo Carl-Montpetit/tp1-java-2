@@ -93,6 +93,8 @@ public class Principal {
             System.out.println( "Class : " + syllabesUniques.get( i ).getClass() + "\n" );
             System.out.println( "Semi-voyelle : " + syllabesUniques.get( i ).getNoyau().getSemiVoyelle().estOuverte());
         }
+
+
         // code.
         /**************************************************************************************************************/
         // cette partie du code affiche les résultats, modifier au besoin.

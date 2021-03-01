@@ -346,59 +346,5 @@ public enum API_Consonne {
     }
 
 
-    /**
-     * à testé
-     * retourne la distance de 2 consonnes avec 3 caractéristiques
-     * @param consonne1 la première consonne
-     * @param consonne2 la deuxième consonne
-     * @return la distance pour les 3 caractéristiques
-     */
-    public int partieConsonne(API_Consonne consonne1,API_Consonne consonne2){
-        int distance = 0;
-        if((consonne1.equals(null) && consonne2.equals(null)) ||
-                (consonne1.equals(null) || consonne2.equals(null))){
-            distance = 0;
-        }else {
-            if (!(consonne1.estContinu() && consonne2.estContinu())) {
-                distance++;
-            }
-            if (!(consonne1.estCompact() && consonne2.estCompact())) {
-                distance++;
-            }
-            if (!(consonne1.estAigu() && consonne2.estAigu())) {
-                distance++;
-            }
-        }
-        return distance;
-    }
 
-
-    /**
-     * à testé
-     * retourne la distance de 2 consonnes
-     * @param consonne1 la 1re consonne
-     * @param consonne2 la 2e consonne
-     * @param distance1 la distance des 3 première caractéristiques
-     * @return la distance totale entre les deux consonnes
-     */
-    public int deuxConsonnes (API_Consonne consonne1,API_Consonne consonne2,
-                              int distance1) {
-        int distance = 0;
-        if (consonne1.equals(null) && consonne2.equals(null)){
-            distance = 0;
-        }else if (consonne1.equals(null) || consonne2.equals(null)) {
-            distance = 6;
-        } else {
-            if (!(consonne1.estVocalique() && consonne2.estVocalique())) {
-                distance = distance1++;
-            }
-            if (!(consonne1.estVoise() && consonne2.estVoise())) {
-                distance++;
-            }
-            if (!(consonne1.estNasal() && consonne2.estNasal())) {
-                distance++;
-            }
-        }
-        return distance;
-    }
 }
