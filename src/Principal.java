@@ -5,6 +5,8 @@ import java.util.Scanner;
  *
  * @nom Montpetit, Carl
  * @code_permanent MONC08069000
+ * @nom Chagnon, Lysanne
+ * @code_permanent CHAL65550003
  */
 
 public class Principal {
@@ -89,15 +91,9 @@ public class Principal {
             System.out.println( "Coda : " + syllabesUniques.get( i ).getCoda() );
             System.out.println( "Noyau : " + syllabesUniques.get( i ).getNoyau() );
             System.out.println( "Class : " + syllabesUniques.get( i ).getClass() + "\n" );
-            System.out.println( "Semi-voyelle : " + syllabesUniques.get( i ).getNoyau().getSemiVoyelle());
+            System.out.println( "Semi-voyelle : " + syllabesUniques.get( i ).getNoyau().getSemiVoyelle().estOuverte());
         }
         // code.
-        // fdsggfgfgfdg
-
-
-
-
-
         /**************************************************************************************************************/
         // cette partie du code affiche les résultats, modifier au besoin.
         /**************************************************************************************************************/
