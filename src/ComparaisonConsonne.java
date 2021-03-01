@@ -60,13 +60,13 @@ public class ComparaisonConsonne {
                 (getConsonneA()==null || getConsonneB()==null)){
             distance = 0;
         }else {
-            if ((getConsonneA().estContinu() && getConsonneB().estContinu())) {
+            if ((!getConsonneA().estContinu()==getConsonneB().estContinu())) {
                 distance++;
             }
-            if ((getConsonneA().estCompact() && getConsonneB().estCompact())) {
+            if ((!getConsonneA().estCompact()==getConsonneB().estCompact())) {
                 distance++;
             }
-            if ((getConsonneA().estAigu() && getConsonneB().estAigu())) {
+            if ((!getConsonneA().estAigu()==getConsonneB().estAigu())) {
                 distance++;
             }
         }
@@ -88,13 +88,13 @@ public class ComparaisonConsonne {
             distance = 6;
         } else {
             distance = distance1;
-            if ((getConsonneA().estVocalique() && getConsonneB().estVocalique())) {
+            if ((!getConsonneA().estVocalique()==getConsonneB().estVocalique())) {
                 distance++;
             }
-            if ((getConsonneA().estVoise() && getConsonneB().estVoise())) {
+            if ((!getConsonneA().estVoise()==getConsonneB().estVoise())) {
                 distance++;
             }
-            if ((getConsonneA().estNasal() && getConsonneB().estNasal())) {
+            if ((!getConsonneA().estNasal()==getConsonneB().estNasal())) {
                 distance++;
             }
         }
