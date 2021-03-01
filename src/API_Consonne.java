@@ -355,14 +355,19 @@ public enum API_Consonne {
      */
     public int partieConsonne(API_Consonne consonne1,API_Consonne consonne2){
         int distance = 0;
-        if(!(consonne1.estContinu() && consonne2.estContinu())){
-            distance++;
-        }
-        if(!(consonne1.estCompact() && consonne2.estCompact())){
-            distance++;
-        }
-        if(!(consonne1.estAigu() && consonne2.estAigu())){
-            distance++;
+        if((consonne1.equals(null) && consonne2.equals(null)) ||
+                (consonne1.equals(null) || consonne2.equals(null))){
+            distance = 0;
+        }else {
+            if (!(consonne1.estContinu() && consonne2.estContinu())) {
+                distance++;
+            }
+            if (!(consonne1.estCompact() && consonne2.estCompact())) {
+                distance++;
+            }
+            if (!(consonne1.estAigu() && consonne2.estAigu())) {
+                distance++;
+            }
         }
         return distance;
     }
@@ -379,7 +384,9 @@ public enum API_Consonne {
     public int deuxConsonnes (API_Consonne consonne1,API_Consonne consonne2,
                               int distance1) {
         int distance = 0;
-        if (consonne1.equals(null) || consonne2.equals(null)) {
+        if (consonne1.equals(null) && consonne2.equals(null)){
+            distance = 0;
+        }else if (consonne1.equals(null) || consonne2.equals(null)) {
             distance = 6;
         } else {
             if (!(consonne1.estVocalique() && consonne2.estVocalique())) {
