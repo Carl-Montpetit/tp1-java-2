@@ -97,7 +97,10 @@ public class Principal {
             //System.out.println(syllabesUniques.get( i ).getAttaque()
             // .deuxConsonnes( syllabesUniques.get( i ).getAttaque().partieConsonne() ) );
         }
-
+        ComparaisonConsonne test =
+                new ComparaisonConsonne(syllabesUniques.get( 0 ).getAttaque().getConsonne1()
+                        ,syllabesUniques.get( 0 ).getAttaque().getConsonne2());
+        System.out.println(test.deuxConsonnes(test.partieConsonne()));
         /**************************************************************************************************************/
         // cette partie du code affiche les résultats, modifier au besoin.
         /**************************************************************************************************************/
