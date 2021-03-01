@@ -154,7 +154,7 @@ public class ConsonneFrancais {
             distance = 6;
         } else {
             if (!(consonne1.estVocalique() && consonne2.estVocalique())) {
-                distance = distance1++;
+                distance = distance + distance1;
             }
             if (!(consonne1.estVoise() && consonne2.estVoise())) {
                 distance++;
