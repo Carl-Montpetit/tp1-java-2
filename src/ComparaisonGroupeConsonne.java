@@ -43,8 +43,13 @@ public class ComparaisonGroupeConsonne {
      * @return la distance entre 2 groupes de consonnes
      */
     // TODO À compléter!
-    public int distanceGroupeConsonne(){
-        int distance = 0;
+    public int distanceGroupeConsonne() {
+        int distance;
+        int distance1 =
+                getDuoConsonneA().deuxConsonnes( getDuoConsonneA().partieConsonne() );
+        int distance2 =
+                getDuoConsonneB().deuxConsonnes( getDuoConsonneB().partieConsonne() );
+        distance = distance1 + distance2;
         return distance;
     }
 }

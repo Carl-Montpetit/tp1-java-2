@@ -70,7 +70,7 @@ public class Principal {
         /**************************************************************************************************************/
         // PLACER LES ACTIONS ICI :
         /**************************************************************************************************************/
-        // Calcul des Occurrences (works!)
+        // CALCUL DES OCCURRENCES (works!)
         /**************************************************************************************************************/
         System.out.println("Le texte sonore est : " + texteSonore);
         TexteSonore syllabesUniques = new TexteSonore();
@@ -82,38 +82,58 @@ public class Principal {
                     texteSonore.occurrenceDunSonDansTexteSonore( texteSonore, syllabesUniques.get( i ) ) );
         }
         /**************************************************************************************************************/
-        // Distance sonore.
-        /**************************************************************************************************************/
         //Informations sur les syllabes (console).
+        /**************************************************************************************************************/
         for ( int i = 0; i < syllabesUniques.size(); i++ ) {
             System.out.println( "Les charactéristiques de " + syllabesUniques.get( i ) + " sont : " );
             System.out.println( "Attack : " + syllabesUniques.get( i ).getAttaque() );
             System.out.println( "Coda : " + syllabesUniques.get( i ).getCoda() );
             System.out.println( "Noyau : " + syllabesUniques.get( i ).getNoyau() );
             System.out.println( "Class : " + syllabesUniques.get( i ).getClass() + "\n" );
-//            System.out.println(syllabesUniques.get(i).getNoyau().getVoyelle
-//             ().estOuverte());
-//            System.out.println(syllabesUniques.get(i).getNoyau()
-//             .getSemiVoyelle().estOuverte());
         }
-        // Distance entre deux phonèmes de consonne.
-//        for ( int i = 0; i < syllabesUniques.size(); i++ ) {
-//            System.out.println(syllabesUniques.get( i ).getAttaque()
-//             .deuxConsonnes( syllabesUniques.get( i ).getAttaque().partieConsonne() ) );
-//        }
+        /**************************************************************************************************************/
+        // DISTANCE SONORE.
+        /**************************************************************************************************************/
+        // Distance entre deux phonèmes de consonne. (TESTS)
+        /**************************************************************************************************************/
 //        ComparaisonConsonne test =
-//                new ComparaisonConsonne(syllabesUniques.get( 2 ).getAttaque
+//                new ComparaisonConsonne( syllabesUniques.get( 1 ).getAttaque
 //                ().getConsonne1()
-//                        ,syllabesUniques.get( 2 ).getAttaque().getConsonne2
+//                        ,syllabesUniques.get( 1 ).getAttaque().getConsonne2
 //                        () );
 //        System.out.println( test.toString() );
 //        System.out.println( test.deuxConsonnes( test.partieConsonne() ) );
+        /**************************************************************************************************************/
+        // Distance entre deux phonèmes de voyelles. (TESTS)
+        /**************************************************************************************************************/
 //        ComparaisonVoyelle test2 =
-//                new ComparaisonVoyelle(syllabesUniques.get(0).getNoyau()
+//                new ComparaisonVoyelle( syllabesUniques.get(0).getNoyau()
 //                .getVoyelle(),
-//                        syllabesUniques.get(0).getNoyau().getSemiVoyelle());
-//        System.out.println(test2.deuxVoyelles(test2.partieVoyelle()));
-
+//                        syllabesUniques.get(0).getNoyau().getSemiVoyelle() );
+//        System.out.println( test2.toString() );
+//        System.out.println( test2.deuxVoyelles( test2.partieVoyelle() ) );
+        /**************************************************************************************************************/
+        // Distance entre deux groupes de consonnes. (TESTS)
+        /**************************************************************************************************************/
+        ComparaisonConsonne test3 = new ComparaisonConsonne(syllabesUniques.get( 1 ).getAttaque().getConsonne1(),
+                syllabesUniques.get( 2 ).getAttaque().getConsonne1() );
+        System.out.println( test3.toString() );
+        /**************************************************************************************************************/
+        // Distance entre deux phonèmes de voyelles. (TESTS)
+        /**************************************************************************************************************/
+        ComparaisonVoyelle test4 = new ComparaisonVoyelle(syllabesUniques.get( 1 ).getNoyau().getVoyelle(),
+                syllabesUniques.get( 2 ).getNoyau().getVoyelle() );
+        System.out.println( test4.toString() );
+        /**************************************************************************************************************/
+        // Distance entre deux syllabes. (TESTS)
+        /**************************************************************************************************************/
+        ComparaisonSyllabes test5 = new ComparaisonSyllabes( syllabesUniques.get(1), syllabesUniques.get(2));
+        System.out.println(test5);
+        /**************************************************************************************************************/
+        // RÉDUCTION ET TRANSFORMATION.
+        /**************************************************************************************************************/
+        // (tests)
+        /**************************************************************************************************************/
 
         /**************************************************************************************************************/
         // cette partie du code affiche les résultats, modifier au besoin.
