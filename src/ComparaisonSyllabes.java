@@ -76,7 +76,11 @@ public class ComparaisonSyllabes {
                         getSyllabe2().getNoyau().getVoyelle());
         ComparaisonGroupeVoyelle noyau = new ComparaisonGroupeVoyelle(noyau1,
                 noyau2);
-        return noyau.distanceGroupeVoyelle();
+        int distanceNasal = 0;
+        if(!getSyllabe1().getNoyau().estNasal()==getSyllabe2().getNoyau().estNasal()){
+            distanceNasal = 1;
+        }
+        return noyau.distanceGroupeVoyelle() + distanceNasal;
     }
 
     /**
