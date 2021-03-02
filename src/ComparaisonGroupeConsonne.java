@@ -2,49 +2,49 @@ public class ComparaisonGroupeConsonne {
     /******************************************************************************************************************/
     // Variables.
     /******************************************************************************************************************/
-    /**
-     * Le premier groupe de consonnes.
-     */
-    public ComparaisonConsonne groupeConsonnesA = null;
+    protected ComparaisonConsonne duoConsonneA = null;
+    protected ComparaisonConsonne duoConsonneB = null;
 
-    /**
-     *  Le deuxième groupe de consonnes.
-     */
-    public ComparaisonConsonne groupeConsonnesB = null;
     /******************************************************************************************************************/
-    // Constructeurs.
+    // Constructeur.
     /******************************************************************************************************************/
     /**
-     * Construit un groupe avec deux silences.
+     * Construit deux groupes de deux consonnes vide  (silencieuse).
      */
-//    public ComparaisonGroupeConsonne() {
-//    }
+    public ComparaisonGroupeConsonne() {
+    }
 
-    /*
-     * Construit un groupe avec deux consonnes.
-     *
-     * @param consonneA La première consonne du premier groupe.  Ne doit pas être
-     * {@code null}.
-     * @param consonneB La consonne secondaire du groupe.
+    /**
+     * Construit deux groupes de deux consonnes.
+     * @param duoConsonneA le 1er groupe de Consonne
+     * @param duoConsonneB le 2e groupe de Consonne
      */
-//    public ComparaisonGroupeConsonne(groupeConsonneA, API_Consonne consonneB) {
-//        this.consonneA = consonneA;
-//        this.consonneB = consonneB;
-//    }
+    public ComparaisonGroupeConsonne(ComparaisonConsonne duoConsonneA,
+                                    ComparaisonConsonne duoConsonneB) {
+        this.duoConsonneA = duoConsonneA;
+        this.duoConsonneB = duoConsonneB;
+    }
     /******************************************************************************************************************/
     // Getters.
     /******************************************************************************************************************/
-//    public API_Consonne getConsonneA() {
-//        return consonneA;
-//    }
-//
-//    public API_Consonne getConsonneB() {
-//        return consonneB;
-//    }
+    public ComparaisonConsonne getDuoConsonneA() {
+        return duoConsonneA;
+    }
+
+    public ComparaisonConsonne getDuoConsonneB() {
+        return duoConsonneB;
+    }
     /******************************************************************************************************************/
     // Méthodes de retour.
     /******************************************************************************************************************/
-//    public int distanceEntreDeuxGroupesDeConsonnes() {*
-//
-//    }
+    /**
+     * à testé
+     * Cette méthode calcule la distance entre 2 groupes de consonne.
+     * @return la distance entre 2 groupes de consonnes
+     */
+    // TODO À compléter!
+    public int distanceGroupeConsonne(){
+        int distance = 0;
+        return distance;
+    }
 }

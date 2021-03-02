@@ -1,9 +1,16 @@
 public class ComparaisonGroupeVoyelle {
-
+    /******************************************************************************************************************/
+    // Variables.
+    /******************************************************************************************************************/
     protected ComparaisonVoyelle duoVoyelleA = null;
-
     protected ComparaisonVoyelle duoVoyelleB = null;
 
+    /******************************************************************************************************************/
+    // Constructeur.
+    /******************************************************************************************************************/
+    /**
+     * Construit deux groupes de deux voyelles vide (silencieuse).
+     */
     public ComparaisonGroupeVoyelle() {
     }
 
@@ -17,7 +24,9 @@ public class ComparaisonGroupeVoyelle {
         this.duoVoyelleA = duoVoyelleA;
         this.duoVoyelleB = duoVoyelleB;
     }
-
+    /******************************************************************************************************************/
+    // Getters.
+    /******************************************************************************************************************/
     public ComparaisonVoyelle getDuoVoyelleA() {
         return duoVoyelleA;
     }
@@ -26,6 +35,9 @@ public class ComparaisonGroupeVoyelle {
         return duoVoyelleB;
     }
 
+    /******************************************************************************************************************/
+    // Méthodes de retour.
+    /******************************************************************************************************************/
     /**
      * à testé
      * Cette méthode calcule la distance entre 2 groupes de consonnes
