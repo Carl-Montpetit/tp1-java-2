@@ -1,3 +1,7 @@
+
+/**
+ * Permet de gérer deux groupes de voyelle.
+ */
 public class ComparaisonGroupeConsonne {
     /******************************************************************************************************************/
     // Variables.
@@ -42,7 +46,7 @@ public class ComparaisonGroupeConsonne {
      * Cette méthode calcule la distance entre 2 groupes de consonne.
      * @return la distance entre 2 groupes de consonnes
      */
-    // TODO À compléter!
+    // TODO À compléter! (pas encore bon)
     public int distanceGroupeConsonne() {
         int distance;
         int distance1 =

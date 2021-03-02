@@ -1,5 +1,8 @@
 import java.util.Objects;
 
+/**
+ * Permet de gérer un groupe de deux phonèmes de consonne.
+ */
 public class ComparaisonConsonne {
     /******************************************************************************************************************/
     // Variables.
@@ -64,19 +67,19 @@ public class ComparaisonConsonne {
      * retourne la distance de 2 consonnes avec 3 caractéristiques
      * @return la distance pour les 3 caractéristiques
      */
-    public int partieConsonne(){
+    public int partieConsonne() {
         int distance = 0;
-        if((getConsonneA()==null && getConsonneB()==null) ||
-                (getConsonneA()==null || getConsonneB()==null)){
+        if ( ( getConsonneA() == null && getConsonneB() == null) ||
+                ( getConsonneA() == null || getConsonneB() == null ) ) {
             distance = 0;
-        }else {
-            if ((!getConsonneA().estContinu()==getConsonneB().estContinu())) {
+        } else {
+            if ( ( !getConsonneA().estContinu() == getConsonneB().estContinu() ) ) {
                 distance++;
             }
-            if ((!getConsonneA().estCompact()==getConsonneB().estCompact())) {
+            if ( ( !getConsonneA().estCompact() == getConsonneB().estCompact() ) ) {
                 distance++;
             }
-            if ((!getConsonneA().estAigu()==getConsonneB().estAigu())) {
+            if ( ( !getConsonneA().estAigu() == getConsonneB().estAigu() ) ) {
                 distance++;
             }
         }
@@ -89,21 +92,21 @@ public class ComparaisonConsonne {
      * @param distance1 la distance des 3 première caractéristiques
      * @return la distance totale entre les deux consonnes
      */
-    public int deuxConsonnes (int distance1) {
+    public int deuxConsonnes ( int distance1 ) {
         int distance = 0;
-        if (getConsonneA()==null && getConsonneB()==null){
+        if ( getConsonneA() == null && getConsonneB() == null) {
             distance = 0;
-        }else if (getConsonneA()==null || getConsonneB()==null) {
+        } else if ( getConsonneA() == null || getConsonneB() == null ) {
             distance = 6;
         } else {
             distance = distance1;
-            if ((!getConsonneA().estVocalique()==getConsonneB().estVocalique())) {
+            if ( ( !getConsonneA().estVocalique() == getConsonneB().estVocalique() ) ) {
                 distance++;
             }
-            if ((!getConsonneA().estVoise()==getConsonneB().estVoise())) {
+            if ( ( !getConsonneA().estVoise() == getConsonneB().estVoise() ) ) {
                 distance++;
             }
-            if ((!getConsonneA().estNasal()==getConsonneB().estNasal())) {
+            if ( ( !getConsonneA().estNasal() == getConsonneB().estNasal() ) ) {
                 distance++;
             }
         }

@@ -1,5 +1,8 @@
-import java.util.regex.Pattern;
 
+
+/**
+ * Permet de gérer un groupe de deux phonèmes de voyelle.
+ */
 public class ComparaisonVoyelle {
 
     /**

@@ -91,7 +91,7 @@ public class TexteSonore extends ArrayList<SyllabeFrancais> {
      * @param texteSonore
      * @return nombre d'occurrence
      */
-    public int occurrenceDunSonDansTexteSonore( TexteSonore texteSonore, SyllabeFrancais syllabe ) {
+    public int occurrenceSyllabeDansTexteSonore( TexteSonore texteSonore, SyllabeFrancais syllabe ) {
         int compteur = 0;
 
         for ( int i = 0; i < texteSonore.size(); i++ ) {

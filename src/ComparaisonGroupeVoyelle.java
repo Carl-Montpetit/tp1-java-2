@@ -1,3 +1,6 @@
+/**
+ * Permet de gérer deux groupes de voyelle.
+ */
 public class ComparaisonGroupeVoyelle {
     /******************************************************************************************************************/
     // Variables.
