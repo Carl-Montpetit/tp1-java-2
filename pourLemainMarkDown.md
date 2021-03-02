@@ -1,3 +1,4 @@
+#__Pour le Main.__
 ``` js
 TexteSonore syllabesUniques = new TexteSonore();
 Arraylist<Integer> occurence; = new Arraylist<>();
