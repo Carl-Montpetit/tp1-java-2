@@ -165,36 +165,39 @@ public class Principal {
         // (tests)
         /**************************************************************************************************************/
         TexteSonore syllabesUniques = new TexteSonore();
-        ArrayList<Integer> occurrences = new ArrayList<>();
-        ArrayList<ComparaisonSyllabes> duoSyllabes = new ArrayList<>();
-        ArrayList<Integer> distances = new ArrayList<>();
+        ArrayList<Integer> occurrencesSyllabesUniques = new ArrayList<>();
+        ArrayList<ComparaisonSyllabes> duosSyllabes = new ArrayList<>();
+        ArrayList<Integer> distancesGroupesSyllabes = new ArrayList<>();
 
         do {
             syllabesUniques = texteSonore.syllabeUnique( texteSonore );
-            occurrences.removeAll( occurrences );
+            occurrencesSyllabesUniques.removeAll( occurrencesSyllabesUniques );
             for ( int i = 0; i < syllabesUniques.size(); i++ ) {
-                occurrences.add( texteSonore.occurrenceSyllabeDansTexteSonore( texteSonore, syllabesUniques.get( i ) ) );
+                occurrencesSyllabesUniques.add( texteSonore.occurrencesSyllabesDansTexteSonore( texteSonore, syllabesUniques.get( i ) ) );
             }
-            duoSyllabes.removeAll( duoSyllabes );
+            duosSyllabes.removeAll( duosSyllabes );
 
             for ( int i = 0; i < syllabesUniques.size() - 1; i++ ) {
                 for ( int j = i + 1; j < syllabesUniques.size(); j++ ) {
-                    duoSyllabes.add( new ComparaisonSyllabes( syllabesUniques.get( i ), syllabesUniques.get( j ) ) );
+                    duosSyllabes.add( new ComparaisonSyllabes( syllabesUniques.get( i ), syllabesUniques.get( j ) ) );
                 }
             }
-            distances.removeAll( distances );
+            distancesGroupesSyllabes.removeAll( distancesGroupesSyllabes );
 
-            for ( int k = 0; k < duoSyllabes.size(); k++ ) {
-                distances.add( duoSyllabes.get( k ).distanceSyllabe() );
+            for ( int k = 0; k < duosSyllabes.size(); k++ ) {
+                distancesGroupesSyllabes.add( duosSyllabes.get( k ).distanceSyllabe() );
             }
 
-        } while ( syllabesUniques.size() != nombreDeSyllabes + 1 && distances.size() < 0 );
+        } while ( syllabesUniques.size() != nombreDeSyllabes + 1 && distancesGroupesSyllabes.size() < 0 );
 
-        System.out.println( texteSonore.toString() );
-        System.out.println( syllabesUniques.toString() );
-        System.out.println( occurrences.toString() );
-        System.out.println( duoSyllabes.toString() );
-        System.out.println( distances.toString() );
+        System.out.println( "Le texte sonore est : " + texteSonore.toString() + "\n" );
+        System.out.println( "Le nombre de syllabe dans le texte est de : " + texteSonore.size() + "\n" );
+        System.out.println( "Les syllabes uniques dans le texte sont : " + syllabesUniques.toString() + "\n" );
+        System.out.println( "Les occurrences selon les indices correspondant aux syllabes uniques sont : "
+                + occurrencesSyllabesUniques.toString() + "\n" );
+        System.out.println( "Les groupes de syllabes possible dans le texte sont : " + duosSyllabes.toString() + "\n" );
+        System.out.println( "Les distances des groupes de syllabes possibles (selon les indices correspondant) sont : "
+                + distancesGroupesSyllabes.toString() + "\n" );
         /**************************************************************************************************************/
         // cette partie du code affiche les résultats, modifier au besoin.
         /**************************************************************************************************************/
