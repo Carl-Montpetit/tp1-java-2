@@ -345,6 +345,4 @@ public enum API_Consonne {
         return Character.toString(codePoint);
     }
 
-
-
 }
