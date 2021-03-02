@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class ComparaisonSyllabes {
     /******************************************************************************************************************/
     // Variables.
@@ -103,7 +105,6 @@ public class ComparaisonSyllabes {
         return distanceDesCodas;
     }
 
-
     /**
      * à testé
      * Cette méthode calcule la distance entre les deux syllabes.
@@ -111,5 +112,31 @@ public class ComparaisonSyllabes {
      */
     public int distanceSyllabe(){
         return distanceAttaque() + distanceNoyau() + distanceCoda();
+    }
+
+    /**
+     * ToString
+     */
+    @Override
+    public String toString() {
+        return "ComparaisonSyllabes{" +
+                "syllabe1=" + syllabe1 +
+                ", syllabe2=" + syllabe2 +
+                '}';
+    }
+    /******************************************************************************************************************/
+    // Equals & hashCode.
+    /******************************************************************************************************************/
+    @Override
+    public boolean equals( Object o ) {
+        if ( this == o ) return true;
+        if ( !( o instanceof ComparaisonSyllabes ) ) return false;
+        ComparaisonSyllabes that = ( ComparaisonSyllabes ) o;
+        return Objects.equals( getSyllabe1(), that.getSyllabe1() ) && Objects.equals( getSyllabe2(), that.getSyllabe2() );
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash( getSyllabe1(), getSyllabe2() );
     }
 }

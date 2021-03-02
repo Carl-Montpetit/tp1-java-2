@@ -67,7 +67,7 @@ public class ComparaisonConsonne {
      * retourne la distance de 2 consonnes avec 3 caractéristiques
      * @return la distance pour les 3 caractéristiques
      */
-    public int partieConsonne() {
+    public int distanceDeuxConsonnesPartieUn() {
         int distance = 0;
         if ( ( getConsonneA() == null && getConsonneB() == null) ||
                 ( getConsonneA() == null || getConsonneB() == null ) ) {
@@ -92,7 +92,7 @@ public class ComparaisonConsonne {
      * @param distance1 la distance des 3 première caractéristiques
      * @return la distance totale entre les deux consonnes
      */
-    public int deuxConsonnes ( int distance1 ) {
+    public int distanceDeuxConsonnesPartieDeux ( int distance1 ) {
         int distance = 0;
         if ( getConsonneA() == null && getConsonneB() == null) {
             distance = 0;
@@ -112,9 +112,10 @@ public class ComparaisonConsonne {
         }
         return distance;
     }
-    /******************************************************************************************************************/
-    // toString.
-    /******************************************************************************************************************/
+
+    /**
+     * toString
+     */
     @Override
     public String toString() {
         return "ComparaisonConsonne{" +

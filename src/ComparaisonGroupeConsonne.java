@@ -1,3 +1,4 @@
+import java.util.Objects;
 
 /**
  * Permet de gérer deux groupes de voyelle.
@@ -49,10 +50,37 @@ public class ComparaisonGroupeConsonne {
     public int distanceGroupeConsonne() {
         int distance;
         int distance1 =
-                getDuoConsonneA().deuxConsonnes( getDuoConsonneA().partieConsonne() );
+                getDuoConsonneA().distanceDeuxConsonnesPartieDeux( getDuoConsonneA().distanceDeuxConsonnesPartieUn() );
         int distance2 =
-                getDuoConsonneB().deuxConsonnes( getDuoConsonneB().partieConsonne() );
+                getDuoConsonneB().distanceDeuxConsonnesPartieDeux( getDuoConsonneB().distanceDeuxConsonnesPartieUn() );
         distance = distance1 + distance2;
         return distance;
+    }
+
+    /**
+     * toString
+     */
+    @Override
+    public String toString() {
+        return "ComparaisonGroupeConsonne{" +
+                "duoConsonneA=" + duoConsonneA +
+                ", duoConsonneB=" + duoConsonneB +
+                '}';
+    }
+
+    /******************************************************************************************************************/
+    // Equals & hashCode.
+    /******************************************************************************************************************/
+    @Override
+    public boolean equals( Object o ) {
+        if ( this == o ) return true;
+        if ( !( o instanceof ComparaisonGroupeConsonne ) ) return false;
+        ComparaisonGroupeConsonne that = ( ComparaisonGroupeConsonne ) o;
+        return Objects.equals( getDuoConsonneA(), that.getDuoConsonneA() ) && Objects.equals( getDuoConsonneB(), that.getDuoConsonneB() );
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash( getDuoConsonneA(), getDuoConsonneB() );
     }
 }

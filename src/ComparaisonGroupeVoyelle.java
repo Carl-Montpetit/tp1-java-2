@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 /**
  * Permet de gérer deux groupes de voyelle.
  */
@@ -48,10 +50,37 @@ public class ComparaisonGroupeVoyelle {
     public int distanceGroupeVoyelle(){
         int distance;
         int distance1 =
-                getDuoVoyelleA().deuxVoyelles(getDuoVoyelleA().partieVoyelle());
+                getDuoVoyelleA().distanceDeuxVoyellesPartieDeux(getDuoVoyelleA().distanceDeuxVoyellesPartieUn());
         int distance2 =
-                getDuoVoyelleB().deuxVoyelles(getDuoVoyelleB().partieVoyelle());
+                getDuoVoyelleB().distanceDeuxVoyellesPartieDeux(getDuoVoyelleB().distanceDeuxVoyellesPartieUn());
         distance = distance1 + distance2;
         return distance;
+    }
+
+    /**
+     * toString
+     */
+    @Override
+    public String toString() {
+        return "ComparaisonGroupeVoyelle{" +
+                "duoVoyelleA=" + duoVoyelleA +
+                ", duoVoyelleB=" + duoVoyelleB +
+                '}';
+    }
+
+    /******************************************************************************************************************/
+    // Equals & hashCode.
+    /******************************************************************************************************************/
+    @Override
+    public boolean equals( Object o ) {
+        if ( this == o ) return true;
+        if ( !( o instanceof ComparaisonGroupeVoyelle ) ) return false;
+        ComparaisonGroupeVoyelle that = ( ComparaisonGroupeVoyelle ) o;
+        return Objects.equals( getDuoVoyelleA(), that.getDuoVoyelleA() ) && Objects.equals( getDuoVoyelleB(), that.getDuoVoyelleB() );
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash( getDuoVoyelleA(), getDuoVoyelleB() );
     }
 }

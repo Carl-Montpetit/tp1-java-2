@@ -72,7 +72,7 @@ public class ComparaisonVoyelle {
      * retourne la distance de 2 voyelles avec 3 caractéristiques
      * @return la distance pour les 3 caractéristiques
      */
-    public int partieVoyelle(){
+    public int distanceDeuxVoyellesPartieUn(){
         int distance = 0;
         if((getVoyelleA()==null && getVoyelleB()==null) ||
                 (getVoyelleA()==null || getVoyelleB()==null)){
@@ -93,7 +93,7 @@ public class ComparaisonVoyelle {
      * @param distance1 la distance des 3 première caractéristiques
      * @return la distance totale entre les deux voyelles
      */
-    public int deuxVoyelles (int distance1) {
+    public int distanceDeuxVoyellesPartieDeux (int distance1) {
         int distance;
         if (getVoyelleA()==null && getVoyelleB()==null){
             distance = 0;
