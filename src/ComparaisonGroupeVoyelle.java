@@ -42,9 +42,8 @@ public class ComparaisonGroupeVoyelle {
     // Méthodes de retour.
     /******************************************************************************************************************/
     /**
-     * à testé
-     * Cette méthode calcule la distance entre 2 groupes de consonnes
-     * @return la distance entre 2 groupes de consonnes
+     * Cette méthode calcule la distance entre 2 groupes de voyelles
+     * @return la distance entre 2 groupes de voyelles
      */
     public int distanceGroupeVoyelle(){
         int distance;

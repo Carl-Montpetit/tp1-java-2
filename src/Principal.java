@@ -97,8 +97,10 @@ public class Principal {
         /**************************************************************************************************************/
         // Distance entre deux phonèmes de consonne. (TESTS)
         /**************************************************************************************************************/
-        ComparaisonConsonne test = new ComparaisonConsonne( syllabesUniques.get( 1 ).getAttaque
-                ().getConsonne1(), syllabesUniques.get( 1 ).getAttaque().getConsonne2() );
+        ComparaisonConsonne test =
+                new ComparaisonConsonne( syllabesUniques.get( 0 ).getAttaque
+                ().getConsonne1(),
+                        syllabesUniques.get( 0 ).getAttaque().getConsonne2() );
         System.out.println( test.toString() );
         System.out.println( test.deuxConsonnes( test.partieConsonne() ) );
 
@@ -117,16 +119,30 @@ public class Principal {
         /**************************************************************************************************************/
         // Distance entre deux groupes de consonnes. (TESTS)
         /**************************************************************************************************************/
+//      TODO ça fonctionne!!!!
+
 //        ComparaisonConsonne test3 = new ComparaisonConsonne(syllabesUniques.get( 1 ).getAttaque().getConsonne1(),
-//                syllabesUniques.get( 2 ).getAttaque().getConsonne1() );
+//                syllabesUniques.get( 1 ).getAttaque().getConsonne2() );
 //        System.out.println( test3.toString() );
 //        System.out.println( test3.deuxConsonnes( test3.partieConsonne() ) );
+//
+//        ComparaisonGroupeConsonne test7 = new ComparaisonGroupeConsonne(test,
+//                test3);
+//        System.out.println(test7.distanceGroupeConsonne());
         /**************************************************************************************************************/
         // Distance entre deux groupes de voyelles. (TESTS)
         /**************************************************************************************************************/
-//        ComparaisonVoyelle test4 = new ComparaisonVoyelle(syllabesUniques.get( 1 ).getNoyau().getVoyelle(),
-//                syllabesUniques.get( 2 ).getNoyau().getVoyelle() );
+//      TODO ça fonctionne!!!!
+
+//        ComparaisonVoyelle test4 = new ComparaisonVoyelle(syllabesUniques
+//        .get( 1 ).getNoyau().getVoyelle(),
+//                syllabesUniques.get( 1 ).getNoyau().getSemiVoyelle() );
 //        System.out.println( test4.toString() );
+//        System.out.println(test4.deuxVoyelles( test4.partieVoyelle() ));
+//
+//        ComparaisonGroupeVoyelle test6 = new ComparaisonGroupeVoyelle(test2,
+//                test4);
+//        System.out.println(test6.distanceGroupeVoyelle());
         /**************************************************************************************************************/
         // Distance entre deux syllabes. (TESTS)
         /**************************************************************************************************************/
