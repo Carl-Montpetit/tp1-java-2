@@ -74,40 +74,40 @@ public class Principal {
         /**************************************************************************************************************/
         // CALCUL DES OCCURRENCES (works!)
         /**************************************************************************************************************/
-        System.out.println( "Le texte sonore est : " + texteSonore + "\n" );
-        System.out.println( "Le nombre de sylabes dans le texte est de : " + texteSonore.size() + "\n" );
-        TexteSonore syllabesUniques = new TexteSonore();
-        syllabesUniques = texteSonore.syllabeUnique( texteSonore );
-        System.out.println( "Les syllabes unique sont : " + syllabesUniques + "\n" );
-
-        ArrayList<Integer> occurrences = new ArrayList<Integer>();
-
-        for ( int i = 0; i < syllabesUniques.size(); i++ ) {
-            System.out.println( syllabesUniques.get( i ) + " : " + "Occurence(s) = " +
-                    texteSonore.occurrenceSyllabeDansTexteSonore( texteSonore, syllabesUniques.get( i ) ) + "\n" );
-            occurrences.add( texteSonore.occurrenceSyllabeDansTexteSonore( texteSonore, syllabesUniques.get( i ) ) );
-        }
-        System.out.println( "Les occurrences sont : " + occurrences.toString() );
+//        System.out.println( "Le texte sonore est : " + texteSonore + "\n" );
+//        System.out.println( "Le nombre de sylabes dans le texte est de : " + texteSonore.size() + "\n" );
+//        TexteSonore syllabesUniques = new TexteSonore();
+//        syllabesUniques = texteSonore.syllabeUnique( texteSonore );
+//        System.out.println( "Les syllabes unique sont : " + syllabesUniques + "\n" );
+//
+//        ArrayList<Integer> occurrences = new ArrayList<Integer>();
+//
+//        for ( int i = 0; i < syllabesUniques.size(); i++ ) {
+//            System.out.println( syllabesUniques.get( i ) + " : " + "Occurence(s) = " +
+//                    texteSonore.occurrenceSyllabeDansTexteSonore( texteSonore, syllabesUniques.get( i ) ) + "\n" );
+//            occurrences.add( texteSonore.occurrenceSyllabeDansTexteSonore( texteSonore, syllabesUniques.get( i ) ) );
+//        }
+//        System.out.println( "Les occurrences sont : " + occurrences.toString() );
         /**************************************************************************************************************/
         //Informations sur les syllabes (console).
         /**************************************************************************************************************/
-        for ( int i = 0; i < syllabesUniques.size(); i++ ) {
-            System.out.println( "Les charactéristiques de " + syllabesUniques.get( i ) + " sont : " );
-            System.out.println( "Attack : " + syllabesUniques.get( i ).getAttaque() );
-            System.out.println( "Coda : " + syllabesUniques.get( i ).getCoda() );
-            System.out.println( "Noyau : " + syllabesUniques.get( i ).getNoyau() + "\n" );
-        }
+//        for ( int i = 0; i < syllabesUniques.size(); i++ ) {
+//            System.out.println( "Les charactéristiques de " + syllabesUniques.get( i ) + " sont : " );
+//            System.out.println( "Attack : " + syllabesUniques.get( i ).getAttaque() );
+//            System.out.println( "Coda : " + syllabesUniques.get( i ).getCoda() );
+//            System.out.println( "Noyau : " + syllabesUniques.get( i ).getNoyau() + "\n" );
+//        }
         /**************************************************************************************************************/
         // DISTANCE SONORE.
         /**************************************************************************************************************/
         // Distance entre deux phonèmes de consonne. (TESTS)
         /**************************************************************************************************************/
-        ComparaisonConsonne test =
-                new ComparaisonConsonne( syllabesUniques.get( 0 ).getAttaque
-                ().getConsonne1(),
-                        syllabesUniques.get( 1 ).getAttaque().getConsonne1() );
-        System.out.println( test.toString() );
-        System.out.println( test.distanceDeuxConsonnesPartieDeux( test.distanceDeuxConsonnesPartieUn() ) + "\n" );
+//        ComparaisonConsonne test =
+//                new ComparaisonConsonne( syllabesUniques.get( 0 ).getAttaque
+//                ().getConsonne1(),
+//                        syllabesUniques.get( 1 ).getAttaque().getConsonne1() );
+//        System.out.println( test.toString() );
+//        System.out.println( test.distanceDeuxConsonnesPartieDeux( test.distanceDeuxConsonnesPartieUn() ) + "\n" );
 
 //        TODO va probablement servir plus tard.   ~ courage on va l'avoir! :) ~
 //        for ( int i = 0; i < syllabesUniques.size(); i++ ) {
@@ -115,27 +115,27 @@ public class Principal {
         /**************************************************************************************************************/
         // Distance entre deux phonèmes de voyelles. (TESTS)
         /**************************************************************************************************************/
-        ComparaisonVoyelle test2 =
-                new ComparaisonVoyelle( syllabesUniques.get( 0 ).getNoyau()
-                .getVoyelle(),
-                        syllabesUniques.get( 0 ).getNoyau().getSemiVoyelle() );
-        System.out.println( test2.toString() );
-        System.out.println( test2.distanceDeuxVoyellesPartieDeux( test2.distanceDeuxVoyellesPartieUn() ) + "\n" );
+//        ComparaisonVoyelle test2 =
+//                new ComparaisonVoyelle( syllabesUniques.get( 0 ).getNoyau()
+//                .getVoyelle(),
+//                        syllabesUniques.get( 0 ).getNoyau().getSemiVoyelle() );
+//        System.out.println( test2.toString() );
+//        System.out.println( test2.distanceDeuxVoyellesPartieDeux( test2.distanceDeuxVoyellesPartieUn() ) + "\n" );
 
         /**************************************************************************************************************/
         // Distance entre deux groupes de consonnes. (TESTS)
         /**************************************************************************************************************/
 //      TODO ça fonctionne!!!!
 
-        ComparaisonConsonne test3 = new ComparaisonConsonne(syllabesUniques.get( 1 ).getAttaque().getConsonne1(),
-                syllabesUniques.get( 1 ).getAttaque().getConsonne2() );
-        System.out.println( test3.toString() );
-        System.out.println( test3.distanceDeuxConsonnesPartieDeux( test3.distanceDeuxConsonnesPartieUn() ) + "\n" );
-
-        ComparaisonGroupeConsonne test7 = new ComparaisonGroupeConsonne( test,
-                test3 );
-        System.out.println( test7.toString() );
-        System.out.println( test7.distanceGroupeConsonne() + "\n" );
+//        ComparaisonConsonne test3 = new ComparaisonConsonne(syllabesUniques.get( 1 ).getAttaque().getConsonne1(),
+//                syllabesUniques.get( 1 ).getAttaque().getConsonne2() );
+//        System.out.println( test3.toString() );
+//        System.out.println( test3.distanceDeuxConsonnesPartieDeux( test3.distanceDeuxConsonnesPartieUn() ) + "\n" );
+//
+//        ComparaisonGroupeConsonne test7 = new ComparaisonGroupeConsonne( test,
+//                test3 );
+//        System.out.println( test7.toString() );
+//        System.out.println( test7.distanceGroupeConsonne() + "\n" );
 
 
         /**************************************************************************************************************/
@@ -143,28 +143,58 @@ public class Principal {
         /**************************************************************************************************************/
 //      TODO ça fonctionne!!!!
 
-        ComparaisonVoyelle test4 = new ComparaisonVoyelle( syllabesUniques
-        .get( 1 ).getNoyau().getVoyelle(),
-                syllabesUniques.get( 1 ).getNoyau().getSemiVoyelle() );
-        System.out.println( test4.toString() );
-        System.out.println( test4.distanceDeuxVoyellesPartieDeux( test4.distanceDeuxVoyellesPartieUn() ) );
-
-        ComparaisonGroupeVoyelle test6 = new ComparaisonGroupeVoyelle( test2,
-                test4 );
-        System.out.println( test6.toString() );
-        System.out.println( test6.distanceGroupeVoyelle() );
+//        ComparaisonVoyelle test4 = new ComparaisonVoyelle( syllabesUniques
+//        .get( 1 ).getNoyau().getVoyelle(),
+//                syllabesUniques.get( 1 ).getNoyau().getSemiVoyelle() );
+//        System.out.println( test4.toString() );
+//        System.out.println( test4.distanceDeuxVoyellesPartieDeux( test4.distanceDeuxVoyellesPartieUn() ) );
+//
+//        ComparaisonGroupeVoyelle test6 = new ComparaisonGroupeVoyelle( test2,
+//                test4 );
+//        System.out.println( test6.toString() );
+//        System.out.println( test6.distanceGroupeVoyelle() );
         /**************************************************************************************************************/
         // Distance entre deux syllabes. (TESTS)
         /**************************************************************************************************************/
-        ComparaisonSyllabes test5 = new ComparaisonSyllabes( syllabesUniques.get(1), syllabesUniques.get(2));
-        System.out.println( test5.toString() );
-        System.out.println( test5.distanceSyllabe() );
+//        ComparaisonSyllabes test5 = new ComparaisonSyllabes( syllabesUniques.get(1), syllabesUniques.get(2));
+//        System.out.println( test5.toString() );
+//        System.out.println( test5.distanceSyllabe() );
         /**************************************************************************************************************/
         // RÉDUCTION ET TRANSFORMATION.
         /**************************************************************************************************************/
         // (tests)
         /**************************************************************************************************************/
+        TexteSonore syllabesUniques = new TexteSonore();
+        ArrayList<Integer> occurrences = new ArrayList<>();
+        ArrayList<ComparaisonSyllabes> duoSyllabes = new ArrayList<>();
+        ArrayList<Integer> distances = new ArrayList<>();
 
+        do {
+            syllabesUniques = texteSonore.syllabeUnique( texteSonore );
+            occurrences.removeAll( occurrences );
+            for ( int i = 0; i < syllabesUniques.size(); i++ ) {
+                occurrences.add( texteSonore.occurrenceSyllabeDansTexteSonore( texteSonore, syllabesUniques.get( i ) ) );
+            }
+            duoSyllabes.removeAll( duoSyllabes );
+
+            for ( int i = 0; i < syllabesUniques.size() - 1; i++ ) {
+                for ( int j = i + 1; j < syllabesUniques.size(); j++ ) {
+                    duoSyllabes.add( new ComparaisonSyllabes( syllabesUniques.get( i ), syllabesUniques.get( j ) ) );
+                }
+            }
+            distances.removeAll( distances );
+
+            for ( int k = 0; k < duoSyllabes.size(); k++ ) {
+                distances.add( duoSyllabes.get( k ).distanceSyllabe() );
+            }
+
+        } while ( syllabesUniques.size() != nombreDeSyllabes + 1 && distances.size() < 0 );
+
+        System.out.println( texteSonore.toString() );
+        System.out.println( syllabesUniques.toString() );
+        System.out.println( occurrences.toString() );
+        System.out.println( duoSyllabes.toString() );
+        System.out.println( distances.toString() );
         /**************************************************************************************************************/
         // cette partie du code affiche les résultats, modifier au besoin.
         /**************************************************************************************************************/
