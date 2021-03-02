@@ -97,12 +97,12 @@ public class Principal {
         /**************************************************************************************************************/
         // Distance entre deux phonèmes de consonne. (TESTS)
         /**************************************************************************************************************/
-        ComparaisonConsonne test =
-                new ComparaisonConsonne( syllabesUniques.get( 0 ).getAttaque
-                ().getConsonne1(),
-                        syllabesUniques.get( 0 ).getAttaque().getConsonne2() );
-        System.out.println( test.toString() );
-        System.out.println( test.deuxConsonnes( test.partieConsonne() ) );
+//        ComparaisonConsonne test =
+//                new ComparaisonConsonne( syllabesUniques.get( 0 ).getAttaque
+//                ().getConsonne1(),
+//                        syllabesUniques.get( 0 ).getAttaque().getConsonne2() );
+//        System.out.println( test.toString() );
+//        System.out.println( test.deuxConsonnes( test.partieConsonne() ) );
 
 //        TODO va probablement servir plus tard.   ~ courage on va l'avoir! :) ~
 //        for ( int i = 0; i < syllabesUniques.size(); i++ ) {

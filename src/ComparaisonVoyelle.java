@@ -1,9 +1,12 @@
-
+import java.util.Objects;
 
 /**
  * Permet de gérer un groupe de deux phonèmes de voyelle.
  */
 public class ComparaisonVoyelle {
+    /******************************************************************************************************************/
+    // Variables.
+    /******************************************************************************************************************/
 
     /**
      * La 2e voyelle du groupe de voyelle.
@@ -17,7 +20,9 @@ public class ComparaisonVoyelle {
      */
     protected API_Voyelle voyelleA = null;
 
-
+    /******************************************************************************************************************/
+    // Constructeurs.
+    /******************************************************************************************************************/
 
     /**
      * Construit un groupe avec deux silences.
@@ -47,6 +52,10 @@ public class ComparaisonVoyelle {
         this.voyelleB = voyelleB;
     }
 
+    /******************************************************************************************************************/
+    // Getters.
+    /******************************************************************************************************************/
+
     public API_Voyelle getVoyelleA() {
         return voyelleA;
     }
@@ -55,9 +64,12 @@ public class ComparaisonVoyelle {
         return voyelleB;
     }
 
+    /******************************************************************************************************************/
+    // Méthodes de retour.
+    /******************************************************************************************************************/
+
     /**
-     * à testé
-     * retourne la distance de 2 consonnes avec 3 caractéristiques
+     * retourne la distance de 2 voyelles avec 3 caractéristiques
      * @return la distance pour les 3 caractéristiques
      */
     public int partieVoyelle(){
@@ -77,10 +89,9 @@ public class ComparaisonVoyelle {
     }
 
     /**
-     * à testé
-     * retourne la distance de 2 consonnes
+     * Retourne la distance de 2 voyelles
      * @param distance1 la distance des 3 première caractéristiques
-     * @return la distance totale entre les deux consonnes
+     * @return la distance totale entre les deux voyelles
      */
     public int deuxVoyelles (int distance1) {
         int distance;
@@ -98,5 +109,32 @@ public class ComparaisonVoyelle {
             }
         }
         return distance;
+    }
+
+    /******************************************************************************************************************/
+    // toString.
+    /******************************************************************************************************************/
+    @Override
+    public String toString() {
+        return "ComparaisonVoyelle{" +
+                "voyelleB=" + voyelleB +
+                ", voyelleA=" + voyelleA +
+                '}';
+    }
+
+    /******************************************************************************************************************/
+    // Equals & hashCode.
+    /******************************************************************************************************************/
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if ( !( o instanceof ComparaisonVoyelle ) ) return false;
+        ComparaisonVoyelle that = ( ComparaisonVoyelle ) o;
+        return getVoyelleA() == that.getVoyelleA() && getVoyelleB() == that.getVoyelleB();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getVoyelleB(), getVoyelleA());
     }
 }
