@@ -53,6 +53,7 @@ public class ComparaisonGroupeVoyelle {
                 getDuoVoyelleA().distanceDeuxVoyellesPartieDeux(getDuoVoyelleA().distanceDeuxVoyellesPartieUn());
         int distance2 =
                 getDuoVoyelleB().distanceDeuxVoyellesPartieDeux(getDuoVoyelleB().distanceDeuxVoyellesPartieUn());
+        //ajout calcul estNasal()
         distance = distance1 + distance2;
         return distance;
     }
