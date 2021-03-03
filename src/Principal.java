@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 /**
@@ -59,7 +60,7 @@ public class Principal {
      *
      * @param args Les paramètres externe de l'application.
      */
-    public static void main( String[] args ) {
+    public static void main( String[] args ) throws ValeurInvalideSyllabeReductionException {
         // cette partie du code lie les entrées.
         Scanner scanner = new Scanner( System.in );
         String nomFichier = demanderNomFichier( scanner );
@@ -166,12 +167,35 @@ public class Principal {
         ArrayList<ComparaisonSyllabes> duosSyllabes = new ArrayList<>();
         Liste deuxSyllabes;
         ArrayList<Integer> distancesGroupesSyllabes = new ArrayList<>();
+        ComparaisonSyllabes duoMinimum;
+        SyllabeFrancais syllabe1;
+        SyllabeFrancais syllabe2;
+        int indexSyllabe1;
+        int indexSyllabe2;
+        int occurrenceSyllabe1;
+        int occurrenceSyllabe2;
+        final String erreurMessage = "\nLe nombre de syllabe cible doit être supérieur au nombre de syllabe dans le " +
+                "texte pour la réduction! \nLa réduction est cancelée! \nVeuillez relancer le logiciel pour recommencer!";
+        /**************************************************************************************************************/
+        // AFFICHAGE INITIAL.
+        /**************************************************************************************************************/
+        System.out.println( "Le texte sonore est : " + texteSonore + "\n" );
+        System.out.println( "Le nombre de sylabes dans le texte est de : " + texteSonore.size() + "\n" );
+        syllabesUniques = texteSonore.syllabeUnique( texteSonore );
+        System.out.println( "Les syllabes uniques dans le texte sont : " + syllabesUniques.toString() + "\n" );
+        /**************************************************************************************************************/
+        // RÉDUCTION ET TRANSFORMATION. (INCLUANT LE CALCUL DES OCCURRENCES)
+        /**************************************************************************************************************/
+//        lancement de l'exception si erreur
+        if ( texteSonore.size() < nombreDeSyllabes ) {
+            throw new ValeurInvalideSyllabeReductionException( erreurMessage );
+        }
 
         do {
             syllabesUniques = texteSonore.syllabeUnique( texteSonore );
 
             occurrencesSyllabesUniques.clear();
-            syllabesUniques.listeOccurrences( occurrencesSyllabesUniques,texteSonore );
+            syllabesUniques.listeOccurrences( occurrencesSyllabesUniques, texteSonore );
 
             duosSyllabes.clear();
             syllabesUniques.liste2Syllabes( duosSyllabes );
@@ -179,25 +203,61 @@ public class Principal {
             distancesGroupesSyllabes.clear();
             deuxSyllabes = new Liste( duosSyllabes );
             deuxSyllabes.listeDistancesSyllabes( distancesGroupesSyllabes );
+//            Va chercher le duo avec la plus petite distance.
+            duoMinimum = duosSyllabes.get( distancesGroupesSyllabes.indexOf( Collections.min( distancesGroupesSyllabes ) ) );
+            syllabe1 = duoMinimum.getSyllabe1();
+            syllabe2 = duoMinimum.getSyllabe2();
+//            Va chercher l'index des syllabes dans le arraylist des occurrences.
+            indexSyllabe1 = syllabesUniques.indexOf( syllabe1 );
+            indexSyllabe2 = syllabesUniques.indexOf( syllabe2 );
+//            Va chercher les occurrences des syllabes.
+            occurrenceSyllabe1 = occurrencesSyllabesUniques.get( indexSyllabe1 );
+            occurrenceSyllabe2 = occurrencesSyllabesUniques.get( indexSyllabe2 );
 
-        } while ( syllabesUniques.size() != nombreDeSyllabes + 1 && distancesGroupesSyllabes.size() < 0 );
-        /**************************************************************************************************************/
-        // cette partie du code affiche les résultats, modifier au besoin.
-        /**************************************************************************************************************/
-        System.out.println( "Le texte sonore est : " + texteSonore.toString() + "\n" );
-        System.out.println( "Le nombre de syllabe dans le texte est de : " + texteSonore.size() + "\n" );
-        System.out.println( "Les syllabes uniques dans le texte sont : " + syllabesUniques.toString() + "\n" );
-        System.out.println( "Les occurrences selon les indices correspondant aux syllabes uniques sont : "
-                + occurrencesSyllabesUniques.toString() + "\n" );
-        System.out.println( "Les groupes de syllabes possible dans le texte sont : " + duosSyllabes.toString() + "\n" );
-        System.out.println( "Les distances des groupes de syllabes possibles (selon les indices correspondant) sont : "
-                + distancesGroupesSyllabes.toString() + "\n" );
-        System.out.println( "Le nombre de syllabe cible était de : " + nombreDeSyllabes );
-//        TODO < ajout des variables dans les SOUT a la fin >
-        System.out.println( "Le nombre de syllabe après la réduction est de : " );
-        System.out.println( "Le texte sonore après la réduction est : " );
+//            TODO I know, va falloir réduire ce bordel en méthode! ☠️
+//            Si l'occurrence de la premiere syllabe est plus grande la remplace dans le Texte sonore aux emplacements en question
+            if ( occurrenceSyllabe1 > occurrenceSyllabe2 ) {
+                for ( int i = 0; i < texteSonore.size(); i++ ) {
+                    if ( texteSonore.get( i ).equals( syllabe2 ) ) {
+                        texteSonore.set( i, syllabe1 );
+                    }
+                }
+//            Si l'occurrence de la deuxième syllabe est plus grande la remplace dans le Texte sonore aux emplacements en question
+            }
+            if ( occurrenceSyllabe1 < occurrenceSyllabe2 ) {
+                for ( int i = 0; i < texteSonore.size(); i++ ) {
+                    if (texteSonore.get( i ).equals( syllabe2 )) {
+                        texteSonore.set( i, syllabe2 );
+                    }
+                }
+            }
+//            Supprime le dernier élément du texte sonore pour réduire la taille de 1
+            if ( texteSonore.size() != nombreDeSyllabes + 1 ) {
+                texteSonore.remove( texteSonore.size() - 1);
+            }
+//            TODO HELP j'arrive pas a faire tourner la boucle while! 👽
+        } while ( texteSonore.size() != nombreDeSyllabes + 1 && distancesGroupesSyllabes.size() < 0 ) ;
+//            TODO si on trouve pas je vais m'amuser avec le debugger pour résoudre ca. (probablement une niaserie 💩)
+            /**************************************************************************************************************/
+            // SORTIE.
+            /**************************************************************************************************************/
+            System.out.println( "Les occurrences (selon les indices correspondant aux syllabes uniques) sont : "
+                    + occurrencesSyllabesUniques.toString() + "\n" );
+            System.out.println( "Les groupes de syllabes possible dans le texte sont : " + duosSyllabes.toString() + "\n" );
+            System.out.println( "Les distances des groupes de syllabes possibles (selon les indices correspondant) sont : "
+                    + distancesGroupesSyllabes.toString() + "\n" );
+            System.out.println( "La distance la plus petite est : "
+                    + Collections.min( distancesGroupesSyllabes ) + "\n" );
+            System.out.println( "Le groupe de syllabe ayant la plus petite distance est : "
+                    + duosSyllabes.get( distancesGroupesSyllabes.indexOf( Collections.min( distancesGroupesSyllabes ) ) ) + "\n" );
+            System.out.println( "L'indice du groupe de syllabe ayant la plus petite distance est : "
+                    + duosSyllabes.get( distancesGroupesSyllabes.indexOf( Collections.min( distancesGroupesSyllabes ) ) ) + "\n" );
+            System.out.println( "La syllabe (de la pair) ayant l'occurence la plus grande : "
+                    + duosSyllabes.get( distancesGroupesSyllabes.indexOf( Collections.min( distancesGroupesSyllabes ) ) ).getSyllabe1() + "\n" );
+            System.out.println( "Le nombre de syllabe cible était de : " + nombreDeSyllabes );
+            System.out.println( "Le nombre de syllabe après la réduction est de : " + texteSonore.size() );
+            System.out.println( "Le texte sonore après la réduction est : " + texteSonore.toString() );
+//            TODO ON A PRESQUE FINIT!!! OMG!!! 👌🏻🤌🏻💪🏻🍾🎊🎉
+
+        }
     }
-//    TODO a mettre dans ValeurInvalideSyllabeReductionException (en parametre) dans une methode.
-//    String erreurMessage = "Le nombre de syllabe cible doit être supérieur au nombre de syllabe dans le texte pour la réduction! ";
-    /******************************************************************************************************************/
-}

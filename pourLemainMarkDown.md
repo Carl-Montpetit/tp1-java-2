@@ -5,12 +5,12 @@ Arraylist<Integer> occurence; = new Arraylist<>();
 Arraylist<ComparaisonSyllabe> duoSyllabes = new Arraylist<>();
 Arraylist<Integer> distances = new Arraylist<>();
 
-//if<=nombreDeSyllabes
+// lancement de l'exception si il ya lieu
+// if<=nombreDeSyllabes
 do{
 syllabesUniques = texteSonore.syllabeUnique(texteSonore);
 occurence.removeAll();
 // où on place les occurences dans le tableau
-//
 duoSyllabes.removeAll();
 //insérer ComparaisonSyllabe dans Arraylist
 for(int i = 0; i < syllabeUnique.size()-1; i++){
@@ -27,6 +27,6 @@ distances.add(duoSyllabes.get(k).distanceSyllabe());
 // Réduction (modification texteSonore)
 //
 
-}while(syllabesUniques != nombreDeSyllabes+1);
+}while(syllabesUniques != nombreDeSyllabes+1 && distancesGroupesSyllabes.size() < 0);
 sout(texteSonore);
 ``` 
