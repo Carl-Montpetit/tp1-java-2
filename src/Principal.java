@@ -167,22 +167,21 @@ public class Principal {
         TexteSonore syllabesUniques = new TexteSonore();
         ArrayList<Integer> occurrencesSyllabesUniques = new ArrayList<>();
         ArrayList<ComparaisonSyllabes> duosSyllabes = new ArrayList<>();
+        Liste deuxSyllabes;
         ArrayList<Integer> distancesGroupesSyllabes = new ArrayList<>();
 
         do {
             syllabesUniques = texteSonore.syllabeUnique( texteSonore );
 
-            occurrencesSyllabesUniques.removeAll( occurrencesSyllabesUniques );
+            occurrencesSyllabesUniques.clear();
             syllabesUniques.listeOccurrences(occurrencesSyllabesUniques,texteSonore);
 
-            duosSyllabes.removeAll( duosSyllabes );
+            duosSyllabes.clear();
             syllabesUniques.liste2Syllabes(duosSyllabes);
 
-            distancesGroupesSyllabes.removeAll( distancesGroupesSyllabes );
-
-            for ( int k = 0; k < duosSyllabes.size(); k++ ) {
-                distancesGroupesSyllabes.add( duosSyllabes.get( k ).distanceSyllabe() );
-            }
+            distancesGroupesSyllabes.clear();
+            deuxSyllabes = new Liste(duosSyllabes);
+            deuxSyllabes.listeDistancesSyllabes(distancesGroupesSyllabes);
 
         } while ( syllabesUniques.size() != nombreDeSyllabes + 1 && distancesGroupesSyllabes.size() < 0 );
 
