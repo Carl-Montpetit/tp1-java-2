@@ -50,9 +50,9 @@ public class ComparaisonSyllabes {
     public int distanceAttaque() {
         int distanceDesAttaques;
         if ( getSyllabe1().getAttaque() == null && getSyllabe2().getAttaque() == null ) {
-            distanceDesAttaques = 0;
+            distanceDesAttaques = Constantes.MIN_DISTANCE_ATTAQUE;
         } else if ( getSyllabe1().getAttaque() == null || getSyllabe2().getAttaque() == null ) {
-            distanceDesAttaques = 2 * 6;
+            distanceDesAttaques = Constantes.MAX_DISTANCE_ATTAQUE;
         } else {
             ComparaisonConsonne attaque1 =
                     new ComparaisonConsonne( getSyllabe1().getAttaque().getConsonne1(), getSyllabe2().getAttaque().getConsonne1() );
@@ -78,9 +78,9 @@ public class ComparaisonSyllabes {
                         getSyllabe2().getNoyau().getVoyelle() );
         ComparaisonGroupeVoyelle noyau = new ComparaisonGroupeVoyelle( noyau1,
                 noyau2 );
-        int distanceNasal = 0;
+        int distanceNasal = Constantes.MIN_DISTANCE_NASAL;
         if ( !getSyllabe1().getNoyau().estNasal() == getSyllabe2().getNoyau().estNasal() ) {
-            distanceNasal = 1;
+            distanceNasal = Constantes.MAX_DISTANCE_NASAL;
         }
         return noyau.distanceGroupeVoyelle() + distanceNasal;
     }
@@ -93,9 +93,9 @@ public class ComparaisonSyllabes {
     public int distanceCoda() {
         int distanceDesCodas;
         if ( getSyllabe1().getCoda() == null && getSyllabe2().getCoda() == null ) {
-            distanceDesCodas = 0;
+            distanceDesCodas = Constantes.MIN_DISTANCE_CODA;
         } else if ( getSyllabe1().getCoda() == null || getSyllabe2().getCoda() == null ) {
-            distanceDesCodas = 2 * 6;
+            distanceDesCodas = Constantes.MAX_DISTANCE_CODA;
         } else {
             ComparaisonConsonne coda1 =
                     new ComparaisonConsonne( getSyllabe1().getCoda().getConsonne1()

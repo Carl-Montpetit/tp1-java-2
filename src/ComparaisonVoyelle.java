@@ -75,10 +75,10 @@ public class ComparaisonVoyelle {
      * @return la distance pour les 3 caractéristiques
      */
     public int distanceDeuxVoyellesPartieUn() {
-        int distance = 0;
+        int distance = Constantes.MIN_DISTANCE_PHONEMES;
         if ( ( getVoyelleA() == null && getVoyelleB() == null ) ||
                 ( getVoyelleA() == null || getVoyelleB() == null ) ) {
-            distance = 0;
+            distance = Constantes.MIN_DISTANCE_PHONEMES;
         } else {
             if ( ( !getVoyelleA().estArrondi() == getVoyelleB().estArrondi() ) ) {
                 distance++;
@@ -99,9 +99,9 @@ public class ComparaisonVoyelle {
     public int distanceDeuxVoyellesPartieDeux( int distance1 ) {
         int distance;
         if ( getVoyelleA() == null && getVoyelleB() == null ) {
-            distance = 0;
+            distance = Constantes.MIN_DISTANCE_PHONEMES;
         } else if ( getVoyelleA() == null || getVoyelleB() == null ) {
-            distance = 4;
+            distance = Constantes.MAX_DISTANCE_PHONEMES_VOYELLE;
         } else {
             distance = distance1;
             if ( ( !getVoyelleA().estArriere() == getVoyelleB().estArriere() ) ) {

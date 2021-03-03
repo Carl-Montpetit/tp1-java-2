@@ -69,10 +69,10 @@ public class ComparaisonConsonne {
      * @return la distance pour les 3 caractéristiques
      */
     public int distanceDeuxConsonnesPartieUn() {
-        int distance = 0;
+        int distance = Constantes.MIN_DISTANCE_PHONEMES;
         if ( ( getConsonneA() == null && getConsonneB() == null ) ||
                 ( getConsonneA() == null || getConsonneB() == null ) ) {
-            distance = 0;
+            distance = Constantes.MIN_DISTANCE_PHONEMES;
         } else {
             if ( ( !getConsonneA().estContinu() == getConsonneB().estContinu() ) ) {
                 distance++;
@@ -94,11 +94,11 @@ public class ComparaisonConsonne {
      * @return la distance totale entre les deux consonnes
      */
     public int distanceDeuxConsonnesPartieDeux( int distance1 ) {
-        int distance = 0;
+        int distance;
         if ( getConsonneA() == null && getConsonneB() == null ) {
-            distance = 0;
+            distance = Constantes.MIN_DISTANCE_PHONEMES;
         } else if ( getConsonneA() == null || getConsonneB() == null ) {
-            distance = 6;
+            distance = Constantes.MAX_DISTANCE_PHONEMES_CONSONNE;
         } else {
             distance = distance1;
             if ( ( !getConsonneA().estVocalique() == getConsonneB().estVocalique() ) ) {
