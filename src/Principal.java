@@ -217,23 +217,16 @@ public class Principal {
 //            TODO I know, va falloir réduire ce bordel en méthode! ☠
 //            TODO  On pourra faire des méthode dans TexteSonore facilement (vu que les 2 if ont juste un
 //             TexteSonore). :)️
-//            Si l'occurrence de la premiere syllabe est plus grande la remplace dans le Texte sonore aux emplacements en question
+//            Si l'occurrence de la premiere syllabe est plus grande, la remplace dans le Texte sonore aux
+//            emplacements en question
             if ( occurrenceSyllabe1 > occurrenceSyllabe2 ) {
-                for ( int i = 0; i < texteSonore.size(); i++ ) {
-                    if ( texteSonore.get( i ).equals( syllabe2 ) ) {
-                        texteSonore.set( i, syllabe1 );
-                    }
-                }
-//            Si l'occurrence de la deuxième syllabe est plus grande la remplace dans le Texte sonore aux emplacements en question
+                texteSonore.remplacementSyll2Pour1(syllabe1,syllabe2);
+
+//            Si l'occurrence de la deuxième syllabe est plus grande ou égale, la remplace dans le Texte sonore aux
+//            emplacements en question
+            }else{
+                texteSonore.remplacementSyll2Pour1(syllabe2,syllabe1);
             }
-            if ( occurrenceSyllabe1 < occurrenceSyllabe2 ) {
-                for ( int i = 0; i < texteSonore.size(); i++ ) {
-                    if (texteSonore.get( i ).equals( syllabe2 )) {
-                        texteSonore.set( i, syllabe2 );
-                    }
-                }
-            }
-//            TODO HELP j'arrive pas a faire tourner la boucle while! 👽 ***TEST 1, 4 et 9 FAILLL!!!!*** Le reste ca va!!!!
 //            TODO J'ai enlevé la condition qui arrêtait la boucle (à testé).
         } while ( texteSonore.size() != nombreDeSyllabes + 1 ) ;
 //            TODO si on trouve pas je vais m'amuser avec le debugger pour résoudre ca. (probablement une niaserie 💩)

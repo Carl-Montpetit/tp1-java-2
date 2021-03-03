@@ -143,4 +143,17 @@ public class TexteSonore extends ArrayList<SyllabeFrancais> {
             }
         }
     }
+
+    /**
+     * Cette méthode sert à remplacer la deuxième syllabe par la première dans le TexteSonore.
+     * @param syllabe1 La première syllabe
+     * @param syllabe2 La deuxième syllabe
+     */
+    public void remplacementSyll2Pour1(SyllabeFrancais syllabe1, SyllabeFrancais syllabe2){
+        for ( int i = 0; i < size(); i++ ) {
+            if ( get( i ).equals( syllabe2 ) ) {
+                set( i, syllabe1 );
+            }
+        }
+    }
 }
