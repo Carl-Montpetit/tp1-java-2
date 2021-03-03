@@ -231,7 +231,7 @@ public class Principal {
                     }
                 }
             }
-//            TODO HELP j'arrive pas a faire tourner la boucle while! 👽
+//            TODO HELP j'arrive pas a faire tourner la boucle while! 👽 ***TEST 1, 4 et 9 FAILLL!!!!*** Le reste ca va!!!!
         } while ( texteSonore.size() != nombreDeSyllabes + 1 && distancesGroupesSyllabes.size() < 0 ) ;
 //            TODO si on trouve pas je vais m'amuser avec le debugger pour résoudre ca. (probablement une niaserie 💩)
             /**************************************************************************************************************/
