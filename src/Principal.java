@@ -231,10 +231,6 @@ public class Principal {
                     }
                 }
             }
-//            Supprime le dernier élément du texte sonore pour réduire la taille de 1
-            if ( texteSonore.size() != nombreDeSyllabes + 1 ) {
-                texteSonore.remove( texteSonore.size() - 1);
-            }
 //            TODO HELP j'arrive pas a faire tourner la boucle while! 👽
         } while ( texteSonore.size() != nombreDeSyllabes + 1 && distancesGroupesSyllabes.size() < 0 ) ;
 //            TODO si on trouve pas je vais m'amuser avec le debugger pour résoudre ca. (probablement une niaserie 💩)
