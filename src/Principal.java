@@ -171,17 +171,13 @@ public class Principal {
 
         do {
             syllabesUniques = texteSonore.syllabeUnique( texteSonore );
-            occurrencesSyllabesUniques.removeAll( occurrencesSyllabesUniques );
-            for ( int i = 0; i < syllabesUniques.size(); i++ ) {
-                occurrencesSyllabesUniques.add( texteSonore.occurrencesSyllabesDansTexteSonore( texteSonore, syllabesUniques.get( i ) ) );
-            }
-            duosSyllabes.removeAll( duosSyllabes );
 
-            for ( int i = 0; i < syllabesUniques.size() - 1; i++ ) {
-                for ( int j = i + 1; j < syllabesUniques.size(); j++ ) {
-                    duosSyllabes.add( new ComparaisonSyllabes( syllabesUniques.get( i ), syllabesUniques.get( j ) ) );
-                }
-            }
+            occurrencesSyllabesUniques.removeAll( occurrencesSyllabesUniques );
+            syllabesUniques.listeOccurrences(occurrencesSyllabesUniques,texteSonore);
+
+            duosSyllabes.removeAll( duosSyllabes );
+            syllabesUniques.liste2Syllabes(duosSyllabes);
+
             distancesGroupesSyllabes.removeAll( distancesGroupesSyllabes );
 
             for ( int k = 0; k < duosSyllabes.size(); k++ ) {

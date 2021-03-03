@@ -1,7 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.ListIterator;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 import java.util.stream.Collectors;
@@ -116,5 +115,28 @@ public class TexteSonore extends ArrayList<SyllabeFrancais> {
             }
         }
         return texteÉlémentsUniques;
+    }
+
+    /**
+     * Cette méthode sert à remplir la liste d'occurrences
+     * @param occurrences La liste d'occurrence qui est vide
+     * @param texteSonore Le texte sonore contenant toutes les syllabes
+     */
+    public void listeOccurrences(ArrayList<Integer> occurrences, TexteSonore texteSonore){
+        for ( int i = 0; i < size(); i++ ) {
+            occurrences.add( occurrencesSyllabesDansTexteSonore( texteSonore, get( i ) ) );
+        }
+    }
+
+    /**
+     * Cette méthode sert à remplir la liste des syllabes à comparer.
+     * @param duosSyllabes La liste de syllabes à comparer
+     */
+    public void liste2Syllabes (ArrayList<ComparaisonSyllabes> duosSyllabes){
+        for ( int i = 0; i < size() - 1; i++ ) {
+            for ( int j = i + 1; j < size(); j++ ) {
+                duosSyllabes.add( new ComparaisonSyllabes( get( i ), get( j ) ) );
+            }
+        }
     }
 }
