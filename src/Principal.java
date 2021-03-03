@@ -214,7 +214,9 @@ public class Principal {
             occurrenceSyllabe1 = occurrencesSyllabesUniques.get( indexSyllabe1 );
             occurrenceSyllabe2 = occurrencesSyllabesUniques.get( indexSyllabe2 );
 
-//            TODO I know, va falloir réduire ce bordel en méthode! ☠️
+//            TODO I know, va falloir réduire ce bordel en méthode! ☠
+//            TODO  On pourra faire des méthode dans TexteSonore facilement (vu que les 2 if ont juste un
+//             TexteSonore). :)️
 //            Si l'occurrence de la premiere syllabe est plus grande la remplace dans le Texte sonore aux emplacements en question
             if ( occurrenceSyllabe1 > occurrenceSyllabe2 ) {
                 for ( int i = 0; i < texteSonore.size(); i++ ) {
@@ -232,7 +234,8 @@ public class Principal {
                 }
             }
 //            TODO HELP j'arrive pas a faire tourner la boucle while! 👽 ***TEST 1, 4 et 9 FAILLL!!!!*** Le reste ca va!!!!
-        } while ( texteSonore.size() != nombreDeSyllabes + 1 && distancesGroupesSyllabes.size() < 0 ) ;
+//            TODO J'ai enlevé la condition qui arrêtait la boucle (à testé).
+        } while ( texteSonore.size() != nombreDeSyllabes + 1 ) ;
 //            TODO si on trouve pas je vais m'amuser avec le debugger pour résoudre ca. (probablement une niaserie 💩)
             /**************************************************************************************************************/
             // SORTIE.
