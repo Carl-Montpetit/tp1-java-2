@@ -21,16 +21,18 @@ public class ComparaisonGroupeConsonne {
 
     /**
      * Construit deux groupes de deux consonnes.
+     *
      * @param duoConsonneA le 1er groupe de Consonne
      * @param duoConsonneB le 2e groupe de Consonne
      */
-    public ComparaisonGroupeConsonne(ComparaisonConsonne duoConsonneA,
-                                    ComparaisonConsonne duoConsonneB) {
+    public ComparaisonGroupeConsonne( ComparaisonConsonne duoConsonneA,
+                                      ComparaisonConsonne duoConsonneB ) {
         this.duoConsonneA = duoConsonneA;
         this.duoConsonneB = duoConsonneB;
     }
     /******************************************************************************************************************/
     // Getters.
+
     /******************************************************************************************************************/
     public ComparaisonConsonne getDuoConsonneA() {
         return duoConsonneA;
@@ -45,6 +47,7 @@ public class ComparaisonGroupeConsonne {
     /**
      * à testé
      * Cette méthode calcule la distance entre 2 groupes de consonne.
+     *
      * @return la distance entre 2 groupes de consonnes
      */
     public int distanceGroupeConsonne() {
@@ -58,7 +61,7 @@ public class ComparaisonGroupeConsonne {
     }
 
     /**
-     * toString
+     * toString.
      */
     @Override
     public String toString() {

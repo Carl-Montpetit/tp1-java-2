@@ -20,12 +20,13 @@ public class ComparaisonGroupeVoyelle {
     }
 
     /**
-     * Construit deux groupes de deux voyelles
+     * Construit deux groupes de deux voyelles.
+     *
      * @param duoVoyelleA le 1er groupe de voyelle
      * @param duoVoyelleB le 2e groupe de voyelle
      */
-    public ComparaisonGroupeVoyelle(ComparaisonVoyelle duoVoyelleA,
-                                    ComparaisonVoyelle duoVoyelleB) {
+    public ComparaisonGroupeVoyelle( ComparaisonVoyelle duoVoyelleA,
+                                     ComparaisonVoyelle duoVoyelleB ) {
         this.duoVoyelleA = duoVoyelleA;
         this.duoVoyelleB = duoVoyelleB;
     }
@@ -44,21 +45,22 @@ public class ComparaisonGroupeVoyelle {
     // Méthodes de retour.
     /******************************************************************************************************************/
     /**
-     * Cette méthode calcule la distance entre 2 groupes de voyelles
+     * Cette méthode calcule la distance entre 2 groupes de voyelles.
+     *
      * @return la distance entre 2 groupes de voyelles
      */
-    public int distanceGroupeVoyelle(){
+    public int distanceGroupeVoyelle() {
         int distance;
         int distance1 =
-                getDuoVoyelleA().distanceDeuxVoyellesPartieDeux(getDuoVoyelleA().distanceDeuxVoyellesPartieUn());
+                getDuoVoyelleA().distanceDeuxVoyellesPartieDeux( getDuoVoyelleA().distanceDeuxVoyellesPartieUn() );
         int distance2 =
-                getDuoVoyelleB().distanceDeuxVoyellesPartieDeux(getDuoVoyelleB().distanceDeuxVoyellesPartieUn());
+                getDuoVoyelleB().distanceDeuxVoyellesPartieDeux( getDuoVoyelleB().distanceDeuxVoyellesPartieUn() );
         distance = distance1 + distance2;
         return distance;
     }
 
     /**
-     * toString
+     * toString.
      */
     @Override
     public String toString() {

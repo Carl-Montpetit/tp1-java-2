@@ -33,7 +33,7 @@ public class ComparaisonConsonne {
      *
      * @param consonneA La consonne du groupe.  Elle est placé comme consonne de base.  Ne doit pas être {@code null}.
      */
-    public ComparaisonConsonne(API_Consonne consonneA) {
+    public ComparaisonConsonne( API_Consonne consonneA ) {
         this.consonneA = consonneA;
     }
 
@@ -41,10 +41,10 @@ public class ComparaisonConsonne {
      * Construit un groupe avec deux consonnes.
      *
      * @param consonneA La consonne de base du groupe.  Ne doit pas être
-     * {@code null}.
+     *                  {@code null}.
      * @param consonneB La consonne secondaire du groupe.
      */
-    public ComparaisonConsonne(API_Consonne consonneA, API_Consonne consonneB) {
+    public ComparaisonConsonne( API_Consonne consonneA, API_Consonne consonneB ) {
         this.consonneA = consonneA;
         this.consonneB = consonneB;
     }
@@ -65,11 +65,12 @@ public class ComparaisonConsonne {
     /**
      * à testé
      * retourne la distance de 2 consonnes avec 3 caractéristiques
+     *
      * @return la distance pour les 3 caractéristiques
      */
     public int distanceDeuxConsonnesPartieUn() {
         int distance = 0;
-        if ( ( getConsonneA() == null && getConsonneB() == null) ||
+        if ( ( getConsonneA() == null && getConsonneB() == null ) ||
                 ( getConsonneA() == null || getConsonneB() == null ) ) {
             distance = 0;
         } else {
@@ -87,14 +88,14 @@ public class ComparaisonConsonne {
     }
 
     /**
-     * à testé
-     * retourne la distance de 2 consonnes
+     * Retourne la distance de 2 consonnes.
+     *
      * @param distance1 la distance des 3 première caractéristiques
      * @return la distance totale entre les deux consonnes
      */
-    public int distanceDeuxConsonnesPartieDeux ( int distance1 ) {
+    public int distanceDeuxConsonnesPartieDeux( int distance1 ) {
         int distance = 0;
-        if ( getConsonneA() == null && getConsonneB() == null) {
+        if ( getConsonneA() == null && getConsonneB() == null ) {
             distance = 0;
         } else if ( getConsonneA() == null || getConsonneB() == null ) {
             distance = 6;

@@ -155,11 +155,6 @@ public class SyllabeFrancais {
                 && Objects.equals( getCoda(), that.getCoda() );
     }
 
-
-
-
-
-
     @Override
     public int hashCode() {
         return Objects.hash( getAttaque(), getNoyau(), getCoda() );

@@ -35,19 +35,20 @@ public class ComparaisonVoyelle {
      *
      * @param voyelleA La voyelle du groupe.  Elle est placé comme consonne de
      *                 base
-     *          .  Ne doit pas être {@code null}.
+     *                 .  Ne doit pas être {@code null}.
      */
-    public ComparaisonVoyelle(API_Voyelle voyelleA) {
+    public ComparaisonVoyelle( API_Voyelle voyelleA ) {
         this.voyelleA = voyelleA;
     }
 
 
     /**
      * Construit un groupe avec deux voyelle.
+     *
      * @param voyelleA la 1re voyelle
      * @param voyelleB la 2e voyelle
      */
-    public ComparaisonVoyelle(API_Voyelle voyelleB,API_Voyelle voyelleA) {
+    public ComparaisonVoyelle( API_Voyelle voyelleB, API_Voyelle voyelleA ) {
         this.voyelleA = voyelleA;
         this.voyelleB = voyelleB;
     }
@@ -69,19 +70,20 @@ public class ComparaisonVoyelle {
     /******************************************************************************************************************/
 
     /**
-     * retourne la distance de 2 voyelles avec 3 caractéristiques
+     * retourne la distance de 2 voyelles avec 3 caractéristiques.
+     *
      * @return la distance pour les 3 caractéristiques
      */
-    public int distanceDeuxVoyellesPartieUn(){
+    public int distanceDeuxVoyellesPartieUn() {
         int distance = 0;
-        if((getVoyelleA()==null && getVoyelleB()==null) ||
-                (getVoyelleA()==null || getVoyelleB()==null)){
+        if ( ( getVoyelleA() == null && getVoyelleB() == null ) ||
+                ( getVoyelleA() == null || getVoyelleB() == null ) ) {
             distance = 0;
-        }else {
-            if ((!getVoyelleA().estArrondi()==getVoyelleB().estArrondi())) {
+        } else {
+            if ( ( !getVoyelleA().estArrondi() == getVoyelleB().estArrondi() ) ) {
                 distance++;
             }
-            if ((!getVoyelleA().estOuverte()==getVoyelleB().estOuverte())) {
+            if ( ( !getVoyelleA().estOuverte() == getVoyelleB().estOuverte() ) ) {
                 distance++;
             }
         }
@@ -89,22 +91,23 @@ public class ComparaisonVoyelle {
     }
 
     /**
-     * Retourne la distance de 2 voyelles
+     * Retourne la distance de 2 voyelles.
+     *
      * @param distance1 la distance des 3 première caractéristiques
      * @return la distance totale entre les deux voyelles
      */
-    public int distanceDeuxVoyellesPartieDeux (int distance1) {
+    public int distanceDeuxVoyellesPartieDeux( int distance1 ) {
         int distance;
-        if (getVoyelleA()==null && getVoyelleB()==null){
+        if ( getVoyelleA() == null && getVoyelleB() == null ) {
             distance = 0;
-        }else if (getVoyelleA()==null || getVoyelleB()==null) {
+        } else if ( getVoyelleA() == null || getVoyelleB() == null ) {
             distance = 4;
         } else {
             distance = distance1;
-            if ((!getVoyelleA().estArriere()==getVoyelleB().estArriere())) {
+            if ( ( !getVoyelleA().estArriere() == getVoyelleB().estArriere() ) ) {
                 distance++;
             }
-            if ((!getVoyelleA().estHaut()==getVoyelleB().estHaut())) {
+            if ( ( !getVoyelleA().estHaut() == getVoyelleB().estHaut() ) ) {
                 distance++;
             }
         }
@@ -126,8 +129,8 @@ public class ComparaisonVoyelle {
     // Equals & hashCode.
     /******************************************************************************************************************/
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
+    public boolean equals( Object o ) {
+        if ( this == o ) return true;
         if ( !( o instanceof ComparaisonVoyelle ) ) return false;
         ComparaisonVoyelle that = ( ComparaisonVoyelle ) o;
         return getVoyelleA() == that.getVoyelleA() && getVoyelleB() == that.getVoyelleB();
@@ -135,6 +138,6 @@ public class ComparaisonVoyelle {
 
     @Override
     public int hashCode() {
-        return Objects.hash(getVoyelleB(), getVoyelleA());
+        return Objects.hash( getVoyelleB(), getVoyelleA() );
     }
 }

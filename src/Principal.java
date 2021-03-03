@@ -109,9 +109,6 @@ public class Principal {
 //        System.out.println( test.toString() );
 //        System.out.println( test.distanceDeuxConsonnesPartieDeux( test.distanceDeuxConsonnesPartieUn() ) + "\n" );
 
-//        TODO va probablement servir plus tard.   ~ courage on va l'avoir! :) ~
-//        for ( int i = 0; i < syllabesUniques.size(); i++ ) {
-//        }
         /**************************************************************************************************************/
         // Distance entre deux phonèmes de voyelles. (TESTS)
         /**************************************************************************************************************/
@@ -174,17 +171,19 @@ public class Principal {
             syllabesUniques = texteSonore.syllabeUnique( texteSonore );
 
             occurrencesSyllabesUniques.clear();
-            syllabesUniques.listeOccurrences(occurrencesSyllabesUniques,texteSonore);
+            syllabesUniques.listeOccurrences( occurrencesSyllabesUniques,texteSonore );
 
             duosSyllabes.clear();
-            syllabesUniques.liste2Syllabes(duosSyllabes);
+            syllabesUniques.liste2Syllabes( duosSyllabes );
 
             distancesGroupesSyllabes.clear();
-            deuxSyllabes = new Liste(duosSyllabes);
-            deuxSyllabes.listeDistancesSyllabes(distancesGroupesSyllabes);
+            deuxSyllabes = new Liste( duosSyllabes );
+            deuxSyllabes.listeDistancesSyllabes( distancesGroupesSyllabes );
 
         } while ( syllabesUniques.size() != nombreDeSyllabes + 1 && distancesGroupesSyllabes.size() < 0 );
-
+        /**************************************************************************************************************/
+        // cette partie du code affiche les résultats, modifier au besoin.
+        /**************************************************************************************************************/
         System.out.println( "Le texte sonore est : " + texteSonore.toString() + "\n" );
         System.out.println( "Le nombre de syllabe dans le texte est de : " + texteSonore.size() + "\n" );
         System.out.println( "Les syllabes uniques dans le texte sont : " + syllabesUniques.toString() + "\n" );
@@ -193,11 +192,12 @@ public class Principal {
         System.out.println( "Les groupes de syllabes possible dans le texte sont : " + duosSyllabes.toString() + "\n" );
         System.out.println( "Les distances des groupes de syllabes possibles (selon les indices correspondant) sont : "
                 + distancesGroupesSyllabes.toString() + "\n" );
-        /**************************************************************************************************************/
-        // cette partie du code affiche les résultats, modifier au besoin.
-        /**************************************************************************************************************/
-//        System.out.println( texteSonore );
-//        System.out.println( nombreDeSyllabes );
+        System.out.println( "Le nombre de syllabe cible était de : " + nombreDeSyllabes );
+//        TODO < ajout des variables dans les SOUT a la fin >
+        System.out.println( "Le nombre de syllabe après la réduction est de : " );
+        System.out.println( "Le texte sonore après la réduction est : " );
     }
+//    TODO a mettre dans ValeurInvalideSyllabeReductionException (en parametre) dans une methode.
+//    String erreurMessage = "Le nombre de syllabe cible doit être supérieur au nombre de syllabe dans le texte pour la réduction! ";
     /******************************************************************************************************************/
 }

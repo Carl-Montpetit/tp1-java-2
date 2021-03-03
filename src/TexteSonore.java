@@ -87,7 +87,9 @@ public class TexteSonore extends ArrayList<SyllabeFrancais> {
     /******************************************************************************************************************/
     /**
      * Calcule le nombre d'occurrence d'une syllabe dans le texte.
-     * @param texteSonore
+     *
+     * @param texteSonore le arraylist contenant le texte sonore entré à la console
+     * @param syllabe une syllabe du texte sonore
      * @return nombre d'occurrence
      */
     public int occurrencesSyllabesDansTexteSonore( TexteSonore texteSonore, SyllabeFrancais syllabe ) {
@@ -103,7 +105,8 @@ public class TexteSonore extends ArrayList<SyllabeFrancais> {
 
     /**
      * Crée un nouveau ArrayList sans occurrences.
-     * @param texteSonore
+     *
+     * @param texteSonore le arraylist contenant le texte sonore entré à la console
      * @return ArrayList contenant les éléments unique sans occurrences
      */
     public TexteSonore syllabeUnique( TexteSonore texteSonore ) {
@@ -118,7 +121,8 @@ public class TexteSonore extends ArrayList<SyllabeFrancais> {
     }
 
     /**
-     * Cette méthode sert à remplir la liste d'occurrences
+     * Cette méthode sert à remplir la liste d'occurrences.
+     *
      * @param occurrences La liste d'occurrence qui est vide
      * @param texteSonore Le texte sonore contenant toutes les syllabes
      */
