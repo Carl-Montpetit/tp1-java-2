@@ -123,8 +123,6 @@ public class Principal {
         /**************************************************************************************************************/
         // Distance entre deux groupes de consonnes. (TESTS)
         /**************************************************************************************************************/
-//      TODO ça fonctionne!!!!
-
 //        ComparaisonConsonne test3 = new ComparaisonConsonne(syllabesUniques.get( 1 ).getAttaque().getConsonne1(),
 //                syllabesUniques.get( 1 ).getAttaque().getConsonne2() );
 //        System.out.println( test3.toString() );
@@ -139,8 +137,6 @@ public class Principal {
         /**************************************************************************************************************/
         // Distance entre deux groupes de voyelles. (TESTS)
         /**************************************************************************************************************/
-//      TODO ça fonctionne!!!!
-
 //        ComparaisonVoyelle test4 = new ComparaisonVoyelle( syllabesUniques
 //        .get( 1 ).getNoyau().getVoyelle(),
 //                syllabesUniques.get( 1 ).getNoyau().getSemiVoyelle() );
@@ -162,7 +158,7 @@ public class Principal {
         /**************************************************************************************************************/
         // (tests)
         /**************************************************************************************************************/
-        TexteSonore syllabesUniques = new TexteSonore();
+        TexteSonore syllabesUniques;
         ArrayList<Integer> occurrencesSyllabesUniques = new ArrayList<>();
         ArrayList<ComparaisonSyllabes> duosSyllabes = new ArrayList<>();
         Liste deuxSyllabes;
@@ -203,6 +199,7 @@ public class Principal {
             distancesGroupesSyllabes.clear();
             deuxSyllabes = new Liste( duosSyllabes );
             deuxSyllabes.listeDistancesSyllabes( distancesGroupesSyllabes );
+            System.out.println(distancesGroupesSyllabes.toString());
 //            Va chercher le duo avec la plus petite distance.
             duoMinimum = duosSyllabes.get( distancesGroupesSyllabes.indexOf( Collections.min( distancesGroupesSyllabes ) ) );
             syllabe1 = duoMinimum.getSyllabe1();
@@ -214,9 +211,6 @@ public class Principal {
             occurrenceSyllabe1 = occurrencesSyllabesUniques.get( indexSyllabe1 );
             occurrenceSyllabe2 = occurrencesSyllabesUniques.get( indexSyllabe2 );
 
-//            TODO I know, va falloir réduire ce bordel en méthode! ☠
-//            TODO  On pourra faire des méthode dans TexteSonore facilement (vu que les 2 if ont juste un
-//             TexteSonore). :)️
 //            Si l'occurrence de la premiere syllabe est plus grande, la remplace dans le Texte sonore aux
 //            emplacements en question
             if ( occurrenceSyllabe1 > occurrenceSyllabe2 ) {
@@ -228,7 +222,7 @@ public class Principal {
                 texteSonore.remplacementSyll2Pour1(syllabe2,syllabe1);
             }
 //            TODO J'ai enlevé la condition qui arrêtait la boucle (à testé).
-        } while ( texteSonore.size() != nombreDeSyllabes + 1 ) ;
+        } while ( syllabesUniques.size() != nombreDeSyllabes + 1 ) ;
 //            TODO si on trouve pas je vais m'amuser avec le debugger pour résoudre ca. (probablement une niaserie 💩)
             /**************************************************************************************************************/
             // SORTIE.
