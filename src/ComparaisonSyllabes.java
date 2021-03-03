@@ -115,7 +115,7 @@ public class ComparaisonSyllabes {
      * @return la distance entre les deux syllabes
      */
     public int distanceSyllabe(){
-        return distanceAttaque() + distanceNoyau() + distanceCoda();
+        return distanceAttaque() + 2*distanceNoyau() + distanceCoda();
     }
 
     /**
